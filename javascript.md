@@ -11,8 +11,11 @@
 
 ## Creating a program
 
-1. Run ```console _npp init ``` toInitialize a new npm in the top level of the project. This creates a manifest file which is where npm stores a list of packages and the versions needed for the project.  
-2. Add packages. Gulp will manage the other packages. When command is run it creates _node_modules_ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the "shopping list" in our manifest file, which is called package.json.  Rhe browserify package is responsible for adding keywords to translate the code into new JavaScript code that our browser does understand.  All packages should be included in the package.json file. The first time running gulp on a new machine install it on the system globally using **$ npm install gulp -g** (_$ sudo npm install gulp -g if permission errors_). **$ npm install** will reload the package for us.
+1. Run ```console _npp init ``` to initialize in the top level of the project. This creates a manifest file which is where npm stores a list of packages and the versions needed for the project.
+
+2. Run ```console npm install gulp ``` to add gulp. When command is run it creates _node_modules_ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the "shopping list" in our manifest file, which is called package.json.  
+
+3) Run ``npm install gulp --save-dev ```he browserify package is responsible for adding keywords to translate the code into new JavaScript code that our browser does understand.  All packages should be included in the package.json file. The first time running gulp on a new machine install it on the system globally using **$ npm install gulp -g** (_$ sudo npm install gulp -g if permission errors_). **$ npm install** will reload the package for us.
 
 ###### console
 ```console
