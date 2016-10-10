@@ -11,7 +11,7 @@
 
 ## Creating a program
 
-1. Run ```console _npp init ``` to initialize in the top level of the project. This creates a manifest file which is where npm stores a list of packages and the versions needed for the project.
+1. Run ```console npm init ``` to initialize in the top level of the project. This creates a manifest file which is where npm stores a list of packages and the versions needed for the project.
 
 2. Run ```console npm install gulp ``` to add gulp. When command is run it creates _node_modules_ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the "shopping list" in our manifest file, which is called package.json.  
 
