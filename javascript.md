@@ -1,17 +1,15 @@
-#  JavaScript
-## Documentation and Terms
-- [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Node](https://nodejs.org/en/)
-- [TypeScript](http://www.typescriptlang.org/)
-- [Angular](https://angularjs.org/)
-
-## Using NPM as a js runtime environment and GULP as an Asset Builder
+#  Using NPM as a js runtime environment and GULP as an Asset Builder
 
 There are other excellent package managers and javascript asset builders.  This process explains using npm and Gulp.
 
 **Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager and hence used to install node programs.  An **asset builder** is a framework to concatenate and minify or compress JavaScript and CSS assets and the chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Advantages of Gulp include the automation of common development tasks, the simplification of repetitive tasks, and a decrease in overall development time.
 
-##### Getting started
+## Documentation and Terms
+- [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Node](https://nodejs.org/en/)
+- [Gulp](https://docs.asp.net/en/latest/client-side/using-gulp.html/)
+
+##Getting started
 - Run ```npm init ``` in the top level of the project. This **_creates a manifest_** file and npm will store the packages and the versions here which are needed for the project.
 
 - Run ```npm install gulp -save-dev ``` to **_add gulp_**. This will __create the file *node_modules*__ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the manifest file, which is called package.json.  
