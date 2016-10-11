@@ -5,7 +5,9 @@
 - [TypeScript](http://www.typescriptlang.org/)
 - [Angular](https://angularjs.org/)
 
-## Using NPM and GULP
+## Using NPM as a js runtime environment and GULP as an Asset Builder
+
+There are other excellent package managers and javascript asset builders.  This process explains using npm and Gulp.
 
 **Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager: use to install node programs.  An **asset builder** is a framework to concatenate and minify or compress JavaScript and CSS assets and chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Some advantages of using Gulp include the automation of common development tasks, the simplification of repetitive tasks, and a decrease in overall development time.
 
