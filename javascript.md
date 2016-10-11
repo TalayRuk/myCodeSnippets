@@ -10,28 +10,28 @@
 **Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager: use to install node programs.  An **asset builder** is a framework to concatenate and minify or compress JavaScript and CSS assets and chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Some advantages of using Gulp include the automation of common development tasks, the simplification of repetitive tasks, and a decrease in overall development time.
 
 ##### Getting started
-- Run ```console npm init ``` to initialize in the top level of the project. This _creates a manifest_ file which is where npm stores a list of packages and the versions needed for the project.
+- Run ```npm init ``` in the top level of the project. This **_creates a manifest_** file which is where npm stores a list of packages and the versions needed for the project.
 
-- Run ```console npm install gulp ``` to _add gulp_. When command is run it creates file ```node_modules``` and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the manifest file, which is called package.json.  
+- Run ```npm install gulp ``` to **_add gulp_**. This will __create the file *node_modules*__ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the manifest file, which is called package.json.  
 
-- Make a **.gitignore** file in the top level of your project folder.  This is a list of folders and files that are inside of your project directory which you don't want to commit to your Git repository.
+- Make a **.gitignore** file in the top level of your project folder.  This is a list of folders and files will not be committed to your Git repository.
 
 - Make **gulpfile.js** in the top level of our project directory.
 
 ##### Installing gulp files and requiring them in your code.
 
-- Run ```npm install browserify --save-dev ``` to install the browserify package.  Browserify is responsible for adding keywords to translate the code into new JavaScript code that our browser understands. The first time running gulp on a new machine install it on the system globally using ```console npm install gulp -g ``` (_sudo npm install gulp -g if permission errors_).
+- Run ```npm install browserify --save-dev ``` to install the browserify package.  Browserify is responsible for adding keywords to translate the code into new JavaScript code that the browser understands. Before running gulp on a new machine for the first time, you will also install it globally using ```console npm install gulp -g ``` (_sudo npm install gulp -g if permission errors_).
 
-- Run ```npm install vinyl-source-stream --save-dev ``` to package browserify and put the browserified source code into a new file (...and does more).
+- Run ```npm install vinyl-source-stream --save-dev ``` for packaging browserify and put the browserified source code into a new file (...and does more).
 
-- Run ```npm install gulp-concat --save-dev``` to consolidating multiple JavaScript files into one file.
+- Run ```npm install gulp-concat --save-dev``` for consolidating multiple JavaScript files into one file.
 
 - Run ```npm install gulp-uglify --save-dev``` for minifiying the consolidated file.
 
-- Run ```npm install gulp-util --save-dev``` (for this settup) to pass dependencies that allow for multiple build options.  For this project the environment variables are development build or a production build.
+- Run ```npm install gulp-util --save-dev``` to pass dependencies that allow for multiple build options.  For this project the environment variables are development build or a production build and gulp util has many more uses.
 
-##### After cloning back down a
-Run ```npm install``` to reintall packages.
+##### For downloading a project with node dependencies
+Run ```npm install``` to reintall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.
 
 ### Console Commands
 ###### console
@@ -39,11 +39,11 @@ Run ```npm install``` to reintall packages.
 npm init
 npm install gulp --save-dev
 npm install browserify --save-dev
-npm install vinyl-source-stream --save-dev // This is
+npm install vinyl-source-stream --save-dev
 npm install gulp-concat --save-dev
 npm install gulp-uglify --save-dev
 npm install gulp-util --save-dev
-$ npm install del --save-dev
+npm install del --save-dev
 ```
 ### Gitignore File
 ###### .gitignore
@@ -52,11 +52,11 @@ node_modules/
 ```
 ### Gulp File
 
-This file provides and an example for the setup of an asset pipeline based on the above Gulp packages.  All interface files end with *-interfeace.js* and are included in the function with the concatInterface dependency.  All logic files must be exported and required by the corresponding interface file. Naming convention for exporting:
+This file provides and an example for the setup of an asset pipeline based on the above Gulp packages.  All interface files end with *-interfeace.js* and are included in the function with the concatInterface dependency.  All logic files must be exported and required by the corresponding interface file. Naming convention for exporting on logical files:
 ```js
 exports.ConstructorModule = Constructor;
 ```
-and naming convention on interface file:
+and naming convention for requiring interface file:
 ```js
 var Constructor = require('./../js/projectname.js').ConstructorModule;
 ```
