@@ -102,5 +102,5 @@ gulp.task("build", ['clean'], function(){
   }
 });
 ```
-####For downloading a project with node dependencies
+### For downloading a project with node dependencies
 Run ```npm install``` to reinstall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.
