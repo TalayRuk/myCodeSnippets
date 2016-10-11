@@ -46,9 +46,13 @@ Testing SQL Statements | Jonathan | Our SQL tutorial will teach you how to use S
 Oracle Live Sql | Jonathan | A place to test sql commands.  Need to sign up with an account and insert database schema | [livesql.oracle.com](https://livesql.oracle.com/)
 
 ## JavaScript
-JavaScript | Recommend | Description | Link
-:---:|:---:|---|---:
-Angular Resources | Stephen | "A bunch of links to blog posts, articles, videos, etc for learning AngularJS 2." | [github.com/](https://github.com/jmcunningham/AngularJS2-Learning)
+JavaScript | Description | Link
+:---:|---|---:
+MDN | Mozilla Development Network: JavaScript documentation | [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+Node | "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world." | [nodejs.org](https://nodejs.org/en/)
+TypeScript | "TypeScript is a typed superset of JavvaScript that compiles to plain JavaScript ." | [typescriptlang.org](http://www.typescriptlang.org/)
+Angular | "HTML enhanced for web apps!" | [angularjs.org](https://angularjs.org/)
+Angular Resources | "A bunch of links to blog posts, articles, videos, etc for learning AngularJS 2." | [github.com](https://github.com/jmcunningham/AngularJS2-Learning)
 
 ## CSS
 CSS| Recommend |Description | Link
@@ -135,7 +139,7 @@ Mix | Description
 [Firewatch](https://www.youtube.com/watch?v=X6neFKE4yaE)| The official soundtrack to Firewatch, composed by the brilliant Chris Remo, who has also did the score for Gone Home & Thirty Flights of Loving.
 [Ori and the Blind Forest Soundtrack](https://www.youtube.com/watch?v=MeVFrt7BUyw)|Ori and the Blind Fores.
 [Mirror's Edge Soundtrack](https://www.youtube.com/watch?v=Y05wiQQbFLU)| The game Soundtrack
-[The Turing Test](https://www.youtube.com/watch?v=MYo7tABrXrA)  | Spacelike.  Intense but relaxing. Music composed by Sam Houghton & Yakobo. 
+[The Turing Test](https://www.youtube.com/watch?v=MYo7tABrXrA)  | Spacelike.  Intense but relaxing. Music composed by Sam Houghton & Yakobo.
 [Abzû](https://www.youtube.com/watch?v=_BaOqcRUFpw) | bzû Full Soundtrack Abzu Full OST Complete OST Music Songs Theme PS4 Austin Wintory.
 
 

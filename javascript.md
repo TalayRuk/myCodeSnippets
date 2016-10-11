@@ -20,7 +20,7 @@ There are other excellent package managers and javascript asset builders.  This 
 
 ##### Installing gulp files and requiring them in your code.
 
-- Run ```npm install browserify --save-dev ``` to install the browserify package.  Browserify is responsible for adding keywords to translate the code into new JavaScript code that the browser understands. Before running gulp on a new machine for the first time, first install it globally using ```console npm install gulp -g ``` (_sudo npm install gulp -g if permission errors_).
+- Run ```npm install browserify --save-dev ``` to install the browserify package.  Browserify is responsible for adding keywords to translate the code into new JavaScript code that the browser understands. Before running gulp on a new machine for the first time, first install it globally using ``` npm install gulp -g ``` (_sudo npm install gulp -g if permission errors_).
 
 - Run ```npm install vinyl-source-stream --save-dev ``` for packaging browserify and put the browserified source code into a new file (...and does more).
 
@@ -29,6 +29,23 @@ There are other excellent package managers and javascript asset builders.  This 
 - Run ```npm install gulp-uglify --save-dev``` for minifiying the consolidated file.
 
 - Run ```npm install gulp-util --save-dev``` to pass dependencies that allow for multiple build options.  For this project the environment variables are development build or a production build and gulp util has many more uses.
+
+- Run ``` npm install jshint --save-dev ``` and ```npm install gulp-jshint --save-dev``` to install jshint.
+
+##### Installing bower
+- Run ```bower init ``` to install bower as another package manager.  It will be used here to manage front end files.  If needed, install bower globally ```npm install bower -g```
+
+- To install regular libraries, run
+```
+bower install jquery --save
+bower install bootstrap --save
+bower install moment --save
+```
+
+##### Adding gulp files to the
+- Run ```npm install bower-files --save-dev``` for allowing Gulp to streamline package deployment process.
+
+- Run ```npm install browser-sync --save-dev``` to install BrowserSync to implement our development server with live reloading.
 
 ### Console Commands
 ###### console
@@ -41,11 +58,24 @@ npm install gulp-concat --save-dev
 npm install gulp-uglify --save-dev
 npm install gulp-util --save-dev
 npm install del --save-dev
+npm install jshint --save-dev
+npm install gulp-jshint --save-dev
+bower init
+npm install bower -g
+bower install jquery --save
+bower install bootstrap --save
+bower install moment --save
+npm install bower-files --save-dev
+npm install browser-sync --save-dev
+
+
 ```
 ### Gitignore File
 ###### .gitignore
 ```file
 node_modules/
+bower_components/
+build/
 ```
 ### Gulp File
 
@@ -67,7 +97,14 @@ var utilities = require('gulp-util');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var del = require('del');
+var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
+
+
+
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
 
 gulp.task('concatInterface', function(){
   return gulp.src(['./js/*-interface.js']) //This finds all the files
@@ -88,8 +125,10 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
     .pipe(gulp.dest("./build/js"));
 });
 
-gulp.task("clean", function(){
-  return del(['build', 'tmp']);
+gulp.task('jshint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task("build", ['clean'], function(){
