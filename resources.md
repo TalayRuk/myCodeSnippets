@@ -73,7 +73,6 @@ Resource | Recommend |Description | Link
 Report.js | Jonathan | Report.js depend on Chart.js for graph rendering. You need to add an ES6 polyfill (core-js or babel-pollyfill) to use this library. | [bi-joe.github.io](http://bi-joe.github.io/report.js/line.html)
 Popup Overlay | Jonathan |jQuery plugin for responsive and accessible modal windows and tooltips|[dev.vast.com](http://dev.vast.com/jquery-popup-overlay/)
 Chart.js|Jonathan|Simple yet flexible JavaScript charting for designers & developers|[www.chartjs.org](http://www.chartjs.org/)
-easyTable|Jonathan|Easy simple jquery plugin table|[github.com/Gabrielr47/](https://github.com/Gabrielr47/easyTable)
 Stupid jQuery Table Sort|Jonathan|This is a stupid jQuery table sorting plugin. Nothing fancy, nothing really impressive. Overall, stupidly simple. Requires jQuery 1.7 or newer.|[github.com/joequery/](https://github.com/joequery/Stupid-Table-Plugin)
 jquery Rain |Jonathan | Librayer of jQuery Project | http://www.jqueryrain.com/
 jquery UI | Jonathan | Basic documentation and librayer of jQuery projects | https://jqueryui.com/
