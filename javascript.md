@@ -70,7 +70,7 @@ var del = require('del');
 var buildProduction = utilities.env.production;
 
 gulp.task('concatInterface', function(){
-  return gulp.src(['./js/*-interfeace.js']) //This finds all the files
+  return gulp.src(['./js/*-interface.js']) //This finds all the files
   .pipe(concat('allConcat.js'))
   .pipe(gulp.dest('./tmp'));
 });
