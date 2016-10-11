@@ -127,12 +127,11 @@ Advice |How Not to Be a Networking Leech: Tips for Seeking Professional Advice |
 ## Music
 Mix | Description
 ---|---|
-[Enjoy Studying - Soundcloud Study Mixes](https://soundcloud.com/enjoy-studying)|
+[Enjoy Studying - Soundcloud Study Mixes](https://soundcloud.com/enjoy-studying)|A cloud of music for studying.
 [Firewatch](https://www.youtube.com/watch?v=X6neFKE4yaE)| The official soundtrack to Firewatch, composed by the brilliant Chris Remo, who has also did the score for Gone Home & Thirty Flights of Loving.
 [Ori and the Blind Forest Soundtrack](https://www.youtube.com/watch?v=MeVFrt7BUyw)|Ori and the Blind Fores.
-[Mirror's Edge Soundtrack](https://www.youtube.com/watch?v=Y05wiQQbFLU)|
-[The Turing Test](https://www.youtube.com/watch?v=MYo7tABrXrA)  | Spacelike.  Intense but relaxing. Music composed by Sam Houghton & Yakobo. | Mirror's Edge OST.
-Solar Fields & Lisa Miskovsky.
+[Mirror's Edge Soundtrack](https://www.youtube.com/watch?v=Y05wiQQbFLU)| The game Soundtrack
+[The Turing Test](https://www.youtube.com/watch?v=MYo7tABrXrA)  | Spacelike.  Intense but relaxing. Music composed by Sam Houghton & Yakobo. 
 [Abzû](https://www.youtube.com/watch?v=_BaOqcRUFpw) | bzû Full Soundtrack Abzu Full OST Complete OST Music Songs Theme PS4 Austin Wintory.
 
 
