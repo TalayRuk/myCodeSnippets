@@ -1,6 +1,6 @@
 
 
-##### Installing JavaScript Everything
+## Installing JavaScript Everything
 Install Node and check that it is working by checking the version
 ```console
 $ node -v
