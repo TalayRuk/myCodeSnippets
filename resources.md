@@ -39,11 +39,13 @@ Xamarin | Sid | Deliver native Android, iOS, and Windows apps, using existing sk
 Xunit Docs|Sid |Xunit Documentation: Getting started with xUnit.net (.NET Core / ASP.NET Core)|[xunit.github.io](https://xunit.github.io/docs/getting-started-dotnet-core.html)
 
 ## Sql
-Sql | Recommend | Description | Link
-:---:|:---:|:---:|---:
-Coding Horror | Epicodus | Explains Outer and Inner Joins | [blog.codinghorror.com](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
-Testing SQL Statements | Jonathan | Our SQL tutorial will teach you how to use SQL to access and manipulate data in: MySQL, SQL Server, Access, Oracle, Sybase, DB2, and other database systems. _I added this because I test all the syntax of my sql statments in their practice area before using it on my site_ | [www.w3schools.com](http://www.w3schools.com/sql/default.asp)
-Oracle Live Sql | Jonathan | A place to test sql commands.  Need to sign up with an account and insert database schema | [livesql.oracle.com](https://livesql.oracle.com/)
+Sql | Description | Link
+:---:|:---:|---:
+SQL Designer| Table designer|[ondras.zarovi.cz](http://ondras.zarovi.cz/sql/demo/)
+Coding Horror | Explains Outer and Inner Joins | [blog.codinghorror.com](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+Testing SQL Statements | Our SQL tutorial will teach you how to use SQL to access and manipulate data in: MySQL, SQL Server, Access, Oracle, Sybase, DB2, and other database systems. _I added this because I test all the syntax of my sql statments in their practice area before using it on my site_ | [www.w3schools.com](http://www.w3schools.com/sql/default.asp)
+Oracle Live Sql | A place to test sql commands.  Need to sign up with an account and insert database schema | [livesql.oracle.com](https://livesql.oracle.com/)
+
 
 ## JavaScript
 JavaScript | Description | Link
