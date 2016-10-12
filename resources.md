@@ -9,15 +9,15 @@ pcpartpicker|  **Hardware**: Explorebuild guides, which cover systems for all us
 
 
 ## Git
-Git | Recommend | Description | Link
-:---:|:---:|---|---:
-Chocolatey | Epicodus |"The package manager for Windows Chocolatey - Software Management. Automated." |[chocolatey.org](https://chocolatey.org/)
-GitKraken| John Franti| "The downright luxurious Git client,for Windows, Mac & Linux." _This resource is an excellent user-interface for gitHub etc._ |[www.gitkraken.com](https://www.gitkraken.com/)
+Git |  Description | Link
+:---:|---|---:
+Chocolatey | "The package manager for Windows Chocolatey - Software Management. Automated." |[chocolatey.org](https://chocolatey.org/)
+GitKraken| "The downright luxurious Git client,for Windows, Mac & Linux." _This resource is an excellent user-interface for gitHub etc._ |[www.gitkraken.com](https://www.gitkraken.com/)
 
 ## Readme
-Git | Recommend | Description | Link
-:---:|:---:|---|---:
-MarkDown | Jonathan |Markdown Cheatsheet  |[github.com/adam-p](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+Git | Description | Link
+:---:|---|---:
+MarkDown | Markdown Cheatsheet  |[github.com/adam-p](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 ## .Net Core and ASP.net
 .Net | Recommend | Description | Link
@@ -77,22 +77,28 @@ Stupid jQuery Table Sort|Jonathan|This is a stupid jQuery table sorting plugin. 
 jquery Rain |Jonathan | Librayer of jQuery Project | http://www.jqueryrain.com/
 jquery UI | Jonathan | Basic documentation and librayer of jQuery projects | https://jqueryui.com/
 
+## API
+API |Description | Link
+:---:|---|---:
+API Directory | Has API database and news | [programmableweb.com](http://www.programmableweb.com/)
+Google Maps | Customize maps with your own content and imagery. | [developers.google.com](https://developers.google.com/maps/documentation/javascript/)
+API Directory | Has API database and news | [programmableweb.com](http://www.programmableweb.com/)
 
 ## Training Sites
-Training| Recommend |Description | Link
-:---:|:---:|---|---:
-Pluralsight | Andrew | Welcome to Pluralsight. The on-demand technology learning platform you count on to stay relevant, with tools that measure your skills and solve your problems—faster.|[www.pluralsight.com](https://www.pluralsight.com/)
-Epicodus | Epicodus | "A vocation school for aspiring programmers." _Good curriculem_ | [learnhowtoprogram.com](https://www.learnhowtoprogram.com)
-Treehouse| Epicodus | "Learn Web Design, Coding & Much More."  _One of the few sites worth the subscription fee._ | [teamtreehouse.com](https://teamtreehouse.com/)
+Training|Description | Link
+:---:|---|---:
+Pluralsight | Welcome to Pluralsight. The on-demand technology learning platform you count on to stay relevant, with tools that measure your skills and solve your problems—faster.|[www.pluralsight.com](https://www.pluralsight.com/)
+Epicodus | "A vocation school for aspiring programmers." _Good curriculem_ | [learnhowtoprogram.com](https://www.learnhowtoprogram.com)
+Treehouse| "Learn Web Design, Coding & Much More."  _One of the few sites worth the subscription fee._ | [teamtreehouse.com](https://teamtreehouse.com/)
 
 ## Hosting Sites
-Hosting| Recommend | Description | Link
-:---:|:---:|---|---:
-Digital Ocean |Kris Dahl | Seamlessly manage your infrastructure. _$5 for 512MB Memory1 Core Processor 20GB SSD Disk1TB Transfer_ | [www.digitalocean.com](https://www.digitalocean.com/)
-ASW |Kris Dahl  |"Amazon Web Services offers cloud website hosting solutions that provides businesses, non-profits, and governmental organizations with a flexible, highly scalable, and low-cost way to deliver their websites and web applications."|[aws.amazon.com](https://aws.amazon.com/websites/)
-Heroku|Kris Dahl |"Choose Heroku for the same reasons disruptive startups do: it’s the best platform for building with modern architectures, innovating quickly, and scaling precisely to meet demand.| [www.heroku.com](https://www.heroku.com/)
-Azure|Kris Dahl  | Microsoft Azure is an open, flexible, enterprise-grade cloud computing platform. Move faster, do more, and save money with IaaS + PaaS.|[azure.microsoft.com](https://azure.microsoft.com/)
-Modulus|Kris Dahl |"Deploy, Scale, and Monitor Apps in the Language of Your Choice"| [modulus.io](https://modulus.io)
+Hosting| Description | Link
+:---:|---|---:
+Digital Ocean | Seamlessly manage your infrastructure. _$5 for 512MB Memory1 Core Processor 20GB SSD Disk1TB Transfer_ | [www.digitalocean.com](https://www.digitalocean.com/)
+ASW |"Amazon Web Services offers cloud website hosting solutions that provides businesses, non-profits, and governmental organizations with a flexible, highly scalable, and low-cost way to deliver their websites and web applications."|[aws.amazon.com](https://aws.amazon.com/websites/)
+Heroku|"Choose Heroku for the same reasons disruptive startups do: it’s the best platform for building with modern architectures, innovating quickly, and scaling precisely to meet demand.| [www.heroku.com](https://www.heroku.com/)
+Azure| Microsoft Azure is an open, flexible, enterprise-grade cloud computing platform. Move faster, do more, and save money with IaaS + PaaS.|[azure.microsoft.com](https://azure.microsoft.com/)
+Modulus|"Deploy, Scale, and Monitor Apps in the Language of Your Choice"| [modulus.io](https://modulus.io)
 
 ## Pooling and Processing
 Pooling and Processing |For |Recommend | Description | Link

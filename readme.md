@@ -8,4 +8,6 @@
 
 [New Javascript Project Using Gulp](javascript.md)   
 
-[Software Installation on new computer](reinstall.md)   
+[Software Installation on new computer](reinstall.md)  
+
+[My API Keys (Private. All listed keys are free)](https://github.com/JonathanBuchner/Personal-API-Keys) 

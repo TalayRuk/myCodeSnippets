@@ -67,15 +67,51 @@ bower install bootstrap --save
 bower install moment --save
 npm install bower-files --save-dev
 npm install browser-sync --save-dev
+npm install gulp-sass gulp-sourcemaps --save-dev
+```
+or download all through adding this package:
 
+### Package.json File
+
+###### package.json
+```json
+{
+  "name": "ProjectName",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower-files": "^3.14.1",
+    "browser-sync": "^2.17.2",
+    "browserify": "^13.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.0.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.3",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
 
 ```
+
 ### Gitignore File
 ###### .gitignore
 ```file
 node_modules/
 bower_components/
 build/
+temp/
+.env
 ```
 ### Gulp File
 
@@ -98,9 +134,21 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var del = require('del');
 var jshint = require('gulp-jshint');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var lib = require('bower-files')({
+  "overrides":{
+    "bootstrap" : {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+});
 var buildProduction = utilities.env.production;
-
-
 
 gulp.task("clean", function(){
   return del(['build', 'tmp']);
@@ -131,13 +179,66 @@ gulp.task('jshint', function(){
     .pipe(jshint.reporter('default'));
 });
 
+gulp.task('bowerJS', function () {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/js'));
+});
+
+gulp.task('bowerCSS', function () {
+  return gulp.src(lib.ext('css').files)
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
+
+//This is what builds everything else.
 gulp.task("build", ['clean'], function(){
   if (buildProduction) {
     gulp.start('minifyScripts');
   } else {
     gulp.start('jsBrowserify');
   }
+  gulp.start('bower');
+  gulp.start('cssBuild');
 });
+//Required reload files
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+gulp.task('htmlBuild', function() {
+  browserSync.reload();
+});
+
+gulp.task('cssBuild', function() {
+  return gulp.src(['scss/*.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch(["scss/*.scss"], ['cssBuild']);
+});
+
 ```
 ## Downloading a project with node dependencies
 Run ```npm install``` to reinstall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.

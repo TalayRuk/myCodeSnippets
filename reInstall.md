@@ -22,3 +22,8 @@ Install TypeScript
 npm install typescript -g
 apm install atom-typescript
 ```
+
+Installing Ruby And Sass
+Install Ruby:
+http://rubyinstaller.org/downloads/
+install sass in command line```gem install sass```
