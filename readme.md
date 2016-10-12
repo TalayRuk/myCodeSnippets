@@ -2,12 +2,10 @@
 
 [Resources](resources.md)
 
-[C# Creating a Project](cSharp.md)
+[C# Creating a locally hosted project using Nancy, Razor, and mssql ](cSharp.md)
 
-[C# Code Snippets](cSharpGetAndSetters.md)
-
-[New Javascript Project Using Gulp](javascript.md)   
+[JAVASCRIPT - Creating a locally host project  with Npm, Bower, and Gulp](javascript.md)   
 
 [Software Installation on new computer](reinstall.md)  
 
-[My API Keys (Private. All listed keys are free)](https://github.com/JonathanBuchner/Personal-API-Keys) 
+[My API Keys (Private. All listed keys are free)](https://github.com/JonathanBuchner/Personal-API-Keys)
