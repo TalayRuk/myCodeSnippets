@@ -94,9 +94,9 @@ npm install bower-files --save-dev
 npm install browser-sync --save-dev
 npm install gulp-sass gulp-sourcemaps --save-dev
 ```
-or download all through adding this package:
+or download all through installing (npm install, bower install) these json files:
 
-### Package.json File
+### Json Files
 
 ###### package.json
 ```json
@@ -310,4 +310,4 @@ gulp.task('serve', function() {
 ```
 
 ## Downloading a project with node dependencies
-Run ```npm install``` and ```bower install ``` to reinstall packages. As you can see from gulpfile.js, buld the project by running `gulp build` and `gulp serve`. 
+Run ```npm install``` and ```bower install ``` to reinstall packages. As you can see from gulpfile.js, buld the project by running `gulp build` and `gulp serve`.
