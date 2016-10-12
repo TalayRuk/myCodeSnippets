@@ -70,7 +70,7 @@ bower install moment --save
 gulpfile.hs
 index.html
 package.json
-``
+```
 
 ### Console Commands
 ###### console
