@@ -1,6 +1,6 @@
 #  Using NPM as a js runtime environment and GULP as an Asset Builder
 
-There are other excellent package managers and javascript asset builders.  This process explains using npm and Gulp.
+There are other excellent package managers and asset builders.  **This process explains using npm, bower, and Gulp to locally host a server.**
 
 **Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager and hence used to install node programs.  An **asset builder** is a framework to concatenate and minify or compress JavaScript and CSS assets and the chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Advantages of Gulp include the automation of common development tasks, the simplification of repetitive tasks, and a decrease in overall development time.
 
@@ -8,6 +8,9 @@ There are other excellent package managers and javascript asset builders.  This 
 - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Node](https://nodejs.org/en/)
 - [Gulp](https://docs.asp.net/en/latest/client-side/using-gulp.html/)
+- [Bower](https://bower.io/)
+- [Sass](http://sass-lang.com/)
+
 
 ##Getting started
 - Run ```npm init ``` in the top level of the project. This **_creates a manifest_** file and npm will store the packages and the versions here which are needed for the project.
@@ -18,7 +21,7 @@ There are other excellent package managers and javascript asset builders.  This 
 
 - Make **gulpfile.js** in the top level of our project directory.
 
-##### Installing gulp files and requiring them in your code.
+##### Installing gulp files.
 
 - Run ```npm install browserify --save-dev ``` to install the browserify package.  Browserify is responsible for adding keywords to translate the code into new JavaScript code that the browser understands. Before running gulp on a new machine for the first time, first install it globally using ``` npm install gulp -g ``` (_sudo npm install gulp -g if permission errors_).
 
@@ -46,6 +49,8 @@ bower install moment --save
 - Run ```npm install bower-files --save-dev``` for allowing Gulp to streamline package deployment process.
 
 - Run ```npm install browser-sync --save-dev``` to install BrowserSync to implement our development server with live reloading.
+
+- Run ```npm install gulp-sass gulp-sourcemaps --save-dev ``` to intall Sass (optional).
 
 ### Console Commands
 ###### console
