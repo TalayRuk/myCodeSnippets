@@ -52,6 +52,26 @@ bower install moment --save
 
 - Run ```npm install gulp-sass gulp-sourcemaps --save-dev ``` to intall Sass (optional).
 
+
+### File Structure For Setup
+
+###### filestructure
+```
+> css
+  styles.css
+> img
+> js
+  project-logic
+  project-interface
+> scss
+  styles.scss
+.gitignore
+.env
+gulpfile.hs
+index.html
+package.json
+``
+
 ### Console Commands
 ###### console
 ```console
