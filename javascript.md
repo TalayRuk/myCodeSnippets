@@ -57,20 +57,20 @@ bower install moment --save
 
 ###### filestructure
 
-![]("img/folder.png") css
-  styles.css
-> img
-> js
-  project-logic
-  project-interface
-> scss
-  styles.scss
-.gitignore
-.env
-gulpfile.js
-index.html
-package.json
-bower.json
+![Folder](img/folder.png "Folder") css  
+-- ![Folder](img/file.png "Folder") styles.css  
+![Folder](img/folder.png "Folder") img  
+![Folder](img/folder.png "Folder") js  
+-- ![Folder](img/file.png "Folder") project-logic  
+-- ![Folder](img/file.png "Folder") project-interface  
+![Folder](img/folder.png "Folder") scss  
+-- ![Folder](img/file.png "Folder") styles.scss  
+![Folder](img/file.png "Folder") .gitignore  
+![Folder](img/file.png "Folder") .env  
+![Folder](img/file.png "Folder") gulpfile.js  
+![Folder](img/file.png "Folder") index.html  
+![Folder](img/file.png "Folder") package.json  
+![Folder](img/file.png "Folder") bower.json  
 
 
 ### Console Commands
@@ -310,4 +310,4 @@ gulp.task('serve', function() {
 ```
 
 ## Downloading a project with node dependencies
-Run ```npm install``` and ```bower install ``` to reinstall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.
+Run ```npm install``` and ```bower install ``` to reinstall packages. As you can see from gulpfile.js, buld the project by running `gulp build` and `gulp serve`. 
