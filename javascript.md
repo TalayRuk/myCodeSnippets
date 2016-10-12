@@ -12,7 +12,7 @@ There are other excellent package managers and asset builders.  **This process e
 - [Sass](http://sass-lang.com/)
 
 
-##Getting started
+## Getting started
 - Run ```npm init ``` in the top level of the project. This **_creates a manifest_** file and npm will store the packages and the versions here which are needed for the project.
 
 - Run ```npm install gulp -save-dev ``` to **_add gulp_**. This will __create the file *node_modules*__ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the manifest file, which is called package.json.  
@@ -56,8 +56,8 @@ bower install moment --save
 ### File Structure For Setup
 
 ###### filestructure
-```
-> css
+
+![]("img/folder.png") css
   styles.css
 > img
 > js
@@ -67,10 +67,11 @@ bower install moment --save
   styles.scss
 .gitignore
 .env
-gulpfile.hs
+gulpfile.js
 index.html
 package.json
-```
+bower.json
+
 
 ### Console Commands
 ###### console
@@ -86,7 +87,6 @@ npm install del --save-dev
 npm install jshint --save-dev
 npm install gulp-jshint --save-dev
 bower init
-npm install bower -g
 bower install jquery --save
 bower install bootstrap --save
 bower install moment --save
@@ -126,9 +126,33 @@ or download all through adding this package:
     "vinyl-source-stream": "^1.1.0"
   }
 }
-
 ```
-
+###### bower.json
+```json
+{
+  "name": "alarmclock",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jonathan Buchner <websites@jonathanbuchner.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.15.1"
+  }
+}
+```
 ### Gitignore File
 ###### .gitignore
 ```file
@@ -263,7 +287,27 @@ gulp.task('serve', function() {
   gulp.watch(['*.html'], ['htmlBuild']);
   gulp.watch(["scss/*.scss"], ['cssBuild']);
 });
-
 ```
+
+### Html pages
+
+##### index.html
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/scripts.css">
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Project Title</title>
+  </head>
+  <body>
+    <h1 class="styles">For testing styles.css</h1>
+    <h1>For testing bower packaged files like<small>boostrap</small></h1>
+    <h1>For testing script.js.  <span class="click">Append Here:<span><span class="spot"></span></h1>
+  </body>
+</html>
+```
+
 ## Downloading a project with node dependencies
-Run ```npm install``` to reinstall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.
+Run ```npm install``` and ```bower install ``` to reinstall packages. This will be needed everytime a github project that places certain files in their .gitignore file.  This is the only step needed to install all dependencies.
