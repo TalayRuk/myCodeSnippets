@@ -61,8 +61,8 @@ bower install moment --save
 -- ![Folder](img/file.png "Folder") styles.css  
 ![Folder](img/folder.png "Folder") img  
 ![Folder](img/folder.png "Folder") js  
--- ![Folder](img/file.png "Folder") project-logic  
--- ![Folder](img/file.png "Folder") project-interface  
+-- ![Folder](img/file.png "Folder") project-logic.js  
+-- ![Folder](img/file.png "Folder") project-interface.js  
 ![Folder](img/folder.png "Folder") scss  
 -- ![Folder](img/file.png "Folder") styles.scss  
 ![Folder](img/file.png "Folder") .gitignore  
@@ -295,8 +295,9 @@ gulp.task('serve', function() {
 ```html
 <html>
   <head>
-    <link rel="stylesheet" href="build/css/scripts.css">
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Project Title</title>
