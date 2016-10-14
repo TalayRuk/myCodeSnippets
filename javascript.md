@@ -159,7 +159,7 @@ or download all through installing (npm install, bower install) these json files
 node_modules/
 bower_components/
 build/
-temp/
+tmp/
 .env
 ```
 ### Gulp File
