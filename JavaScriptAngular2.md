@@ -384,7 +384,7 @@ platform.bootstrapModule(AppModule);
 
 ## Explanations, Definitions, Terms, Examples
 
-###### Model-View-Controller Pattern
+### Model-View-Controller Pattern
 As web applications gain increasingly rich and complex user interfaces, a new breed of tools called "client-side MVCs.  MVC stands for Model-View-Controller and refers to a pattern where data, processing and display duties are divided into models, views and controllers.  Three of the most popular client-side JavaScript MVC tools are Angular, Ember, and React, a model originally pioneered by React.js.
 
 ##### Terms
@@ -393,9 +393,9 @@ As web applications gain increasingly rich and complex user interfaces, a new br
 + **Routing:** In MVC frameworks, the mapping of a URL to a component.
 + **Model:** In the MVC context, the data that is provided to a component.
 ![Components](img/component-graphic.png)
+
 ### TypeScript
-Angular-based apps can be written in JavaScript and another programming language called Dart.  TypeScript provides tools to build code more robustly: TypeScript lets you define types for your data.  
-All properties and methods are public by default. This means they can be accessed from anywhere.
+Angular-based apps can be written in JavaScript and another programming language called Dart.  TypeScript provides tools to build code more robustly: TypeScript lets you define types for your data.  All properties and methods are public by default. This means they can be accessed from anywhere.
 ##### Terms
 + **Optional typing:** A feature of TypeScript that allows the developer to declare the data type of a variable.
 + **Loosely typed:** A description for a language that does not require the developer to define the data type of a variable (e.g. JavaScript).
@@ -424,7 +424,7 @@ All properties and methods are public by default. This means they can be accesse
   + **Inheritance:** Gaining properties or methods from another component. For instance, classes may inherit other classes in order to access their methods and properties. Interfaces may also inherit from other interfaces, to access their methods and properties.
 
 ### Angular
-**Components:** are the basic building blocks of an Angular 2 app.  _Components_ are represented by a custom HTML element, like `<user-profile>.` Data is passed in using attributes, like `<user-profile name="Diane" job="Teacher">`.  When the value of an attribute changes, the component automatically updates the user interface!  Components are isolated--they can't directly change other components--but instead, components may emit actions that are received by parent component. The parent may then take an action of its own, which may be passed into its child components.  This is referred to as _"data down, actions up"_   A _component_ has a selector property.
+**Components** are the basic building blocks of an Angular 2 app.  _Components_ are represented by a custom HTML element, like `<user-profile>.` Data is passed in using attributes, like `<user-profile name="Diane" job="Teacher">`.  When the value of an attribute changes, the component automatically updates the user interface!  Components are isolated--they can't directly change other components--but instead, components may emit actions that are received by parent component. The parent may then take an action of its own, which may be passed into its child components.  This is referred to as _"data down, actions up"_   A _component_ has a selector property.
 
 **Selectors** interact with DOM elements, the _component's selector is the DOM element the component is attached to_ (generally a new HTML tag). A selector is a native AngularJS directive that transform a simple `<select>` box into a full html select with typeahead.  A _component_ also must include a template. A **template** is made up of the HTML that we want to display inside of our _selector_.  A _component_ has two halves: An annotation and a class definition.  We have one component called the **root component** that is responsible for loading its child components.  The @Component() defining our annotation is called a **decorator**. _Decorator_  are a design pattern that is used to separate modification or decoration of a class without modifying the original source code. In Angular, decorators are functions that allow a service, directive or filter to be modified prior to its usage.
 

@@ -17,7 +17,8 @@ GitKraken| "The downright luxurious Git client,for Windows, Mac & Linux." _This 
 ## Readme
 Git | Description | Link
 :---:|---|---:
-MarkDown | Markdown Cheatsheet  |[github.com/adam-p](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+MarkDown | Markdown cheatsheet  | [github.com/adam-p](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+GitPrint | Prints Markdown files. | [https://gitprint.com/](gitprint.com/)
 
 ## .Net Core and ASP.net
 .Net | Recommend | Description | Link
