@@ -58,7 +58,8 @@ Testable
 -- ![Folder](img/folder.png "Folder") styles  
 -- ![Folder](img/folder.png "Folder") js  
 -- ![Folder](img/folder.png "Folder") images   
-![File](img/file.png "file") .gitignore  
+![File](img/file.png "file") .gitignore
+![File](img/file.png "file") bower.json    
 ![File](img/file.png "file") gulpfile.js  
 ![File](img/file.png "file") index.html  
 ![File](img/file.png "file") package.json  
@@ -77,24 +78,41 @@ app/*.js.map
 .DS_Store
 build/
 typings/
+
 ```
+###### bower.json
+```
+{
+  "name": "angular2-skeleton-app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Andrew Niekamp <andrew.f.niekamp@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
+```
+
 ###### gulpfile.js
 ```js
-///////////////////// DEPENDENCIES AND VARIABLES //////////////////////
+////////////////////// DEPENDENCIES AND VARIABLES //////////////////////
+
 var gulp = require('gulp');
+
 // used for concatenating/minifying bower files and other js/css
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-// used for build and clean tasks.
-var utilities = require('gulp-util');
-var buildProduction = utilities.env.production;
-var del = require('del');
-// set up server with watchers and run typescript compiler in the shell.
-var browserSync = require('browser-sync').create();
-var shell = require('gulp-shell');
-// sass dependencies.
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 // used for pulling in bower files.
 var lib = require('bower-files')({
   "overrides":{
@@ -108,7 +126,23 @@ var lib = require('bower-files')({
   }
 });
 
+// used for build and clean tasks.
+var utilities = require('gulp-util');
+var buildProduction = utilities.env.production;
+var del = require('del');
+
+// set up server with watchers and run typescript compiler in the shell.
+var browserSync = require('browser-sync').create();
+var shell = require('gulp-shell');
+
+// sass dependencies.
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+
+
+
 ////////////////////// TYPESCRIPT //////////////////////
+
 // clean task
 gulp.task('tsClean', function(){
   return del(['app/*.js', 'app/*.js.map']);
@@ -160,7 +194,8 @@ gulp.task('sassBuild', function() {
 });
 
 ////////////////////// SERVER //////////////////////
-gulp.task('serve', ['build'], function() {
+
+gulp.task('serve', function() {
   browserSync.init({
     server: {
       baseDir: "./",
@@ -190,12 +225,14 @@ gulp.task('tsBuild', ['ts'], function(){
 });
 
 ////////////////////// GLOBAL BUILD TASK //////////////////////
+
 // global build task with individual clean tasks as dependencies.
 gulp.task('build', ['ts'], function(){
   // we can use the buildProduction environment variable here later.
   gulp.start('bower');
   gulp.start('sassBuild');
 });
+
 ```
 
 Few changes are made to the basic `index.html` because gulp sets up local assets and `<my-app>` holds all child controllers.
@@ -333,14 +370,19 @@ The next four files are taken from Angular documentation with a few additions to
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "system",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }
 ```
 
