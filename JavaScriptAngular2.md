@@ -1,24 +1,32 @@
 # Creating An Angular 2 Project
 
+What is TypeScript?
+> TypeScript starts from the same syntax and semantics that millions of JavaScript developers know today. Use existing JavaScript code, incorporate popular JavaScript libraries, and call TypeScript code from JavaScript. TypeScript compiles to clean, simple JavaScript code which runs on any browser, in Node.js, or in any JavaScript engine that supports ECMAScript 3 (or newer).<sup>2</sup>
+
+>Types enable JavaScript developers to use highly-productive development tools and practices like static checking and code refactoring when developing JavaScript applications. Types are optional, and type inference allows a few type annotations to make a big difference to the static verification of your code. Types let you define interfaces between software components and gain insights into the behavior of existing JavaScript libraries.<sup>2</sup>
+
 Why Angular?
->HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.1
+>HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.<sup>1</sup>
 
-Alternatives
-> Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.1
+Alternatives to Angular
+> Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.<sup>1</sup>
 
-Extensibility
-> AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs.1
-
+Angular Extensibility
+> AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs.<sup>1</sup>
 
 
 Angular is a JavaScript framework that uses TypeScript. The design of this project template is taken from the Angular 2 Documentation and there is little need to change the file.  F.  There is an API that allows using standard ECMAScript 5 JavaScript, but it is recommended to use TypeScript.  
 
-Notes:
-+ _app.component.ts_ will hold the entire app.
+## Set up
++ Install node.js and npm.
++ Install TypeScript globally as a regular npm package `npm install typescript -g`.  Check installation by checking TypeScript version `tsc -v`.  
+  + If using the text editor Atom, optionaly install `apm install atom-typescript` to use autocomplete and TypeScript specific linting.  Having a TypeScript package installed for your text editor allows the compiler to warn you about errors as you type, without even needing to compile
+
 
 ### Documentation
-+ 1 [Angular 2](https://angular.io/docs/ts/latest/quickstart.html)
-+ [TypeScrpit - _link broken_](https://angular.io/docs/ts/latest/quickstart.html)
++ <sup>1</sup>  [Angular 2 Documentation](https://angular.io/docs/ts/latest/quickstart.html)
++ <sup>2 </sup> [TypeScript Documentation](https://www.typescriptlang.org/)
++ <sup>3 </sup> [ECMAScript Wikipedia Page](https://en.wikipedia.org/wiki/ECMAScript)
 
 ## Starting Files
 
@@ -376,22 +384,92 @@ const platform = platformBrowserDynamic();
 platform.bootstrapModule(AppModule);
 ```
 
-## Definitions
-**Components:** are the basic building blocks of an Angular 2 app.  A _component_ has a selector property. **Selectors** interact with DOM elements, the _component's selector is the DOM element the component is attached to_ (generally a new HTML tag). A selector is a native AngularJS directive that transform a simple `<select>` box into a full html select with typeahead.  A _component_ also must include a template. A **template** is made up of the HTML that we want to display inside of our _selector_.  A _component_ has two halves: An annotation and a class definition.  We have one component called the **root component** that is responsible for loading its child components.  The @Component() defining our annotation is called a **decorator**. _Decorator_  are a design pattern that is used to separate modification or decoration of a class without modifying the original source code. In Angular, decorators are functions that allow a service, directive or filter to be modified prior to its usage.
+## Explanations, Definitions, Terms, Examples
 
-###### example
+###### Model-View-Controller Pattern
+As web applications gain increasingly rich and complex user interfaces, a new breed of tools called "client-side MVCs.  MVC stands for Model-View-Controller and refers to a pattern where data, processing and display duties are divided into models, views and controllers.  Three of the most popular client-side JavaScript MVC tools are Angular, Ember, and React, a model originally pioneered by React.js.
+
+##### Terms
++ **MVC:** Abbreviation for Model-View-Controller that refers to a pattern where data, processing and display duties are divided into models, views and controllers.
++ **Component:** In MVC frameworks, a container for a section of a website's functionality including both the user interface and the logic to connect it with the models.
++ **Routing:** In MVC frameworks, the mapping of a URL to a component.
++ **Model:** In the MVC context, the data that is provided to a component.
+![Components](img/component-graphic.png)
+### TypeScript
+Angular-based apps can be written in JavaScript and another programming language called Dart.  TypeScript provides tools to build code more robustly: TypeScript lets you define types for your data.  
+All properties and methods are public by default. This means they can be accessed from anywhere.
+##### Terms
++ **Optional typing:** A feature of TypeScript that allows the developer to declare the data type of a variable.
++ **Loosely typed:** A description for a language that does not require the developer to define the data type of a variable (e.g. JavaScript).
++ **Type annotations:** Definitions for variables that initialize them with a type instead of allowing a type to be inferred.
++ **Class declaration:** Think of a class as a blueprint for an object, which itself is the most basic and most customizable building block of JavaScript. Classes allow us to declare methods - actions that every instance of that class will be able to take.
++ **Inheritance:** The act of a class inheriting from another (base) class. When a class inherits another class, it gains access to all its public properties and methods.  
+  + **Child class:** The class inheriting another (base) class.
+  + **Super:** A keyword used to refer to the parent class from within the child class.The **super** keyword is required when creating a constructor in a child class. It calls the parent's constructor.
+  + Declaring a child class syntax: ``class child extends parent {}``.
++ **Interface:** A group of methods and properties multiple different classes may inherit.
+  ###### example
+  ```ts
+  interface Noisy {
+    sound: string;
+  }
+
+  class Elephant implements Noisy {
+    constructor(public sound: string){}
+    angryNoise(){
+      console.log("rumble");
+    }
+  }
+  ```
+  + **Implement:** The act of assigning an interface to a class or property.
+  + **Child interface:** An interface that extends another interface.
+  + **Inheritance:** Gaining properties or methods from another component. For instance, classes may inherit other classes in order to access their methods and properties. Interfaces may also inherit from other interfaces, to access their methods and properties.
+
+### Angular
+**Components:** are the basic building blocks of an Angular 2 app.  _Components_ are represented by a custom HTML element, like `<user-profile>.` Data is passed in using attributes, like `<user-profile name="Diane" job="Teacher">`.  When the value of an attribute changes, the component automatically updates the user interface!  Components are isolated--they can't directly change other components--but instead, components may emit actions that are received by parent component. The parent may then take an action of its own, which may be passed into its child components.  This is referred to as _"data down, actions up"_   A _component_ has a selector property.
+
+**Selectors** interact with DOM elements, the _component's selector is the DOM element the component is attached to_ (generally a new HTML tag). A selector is a native AngularJS directive that transform a simple `<select>` box into a full html select with typeahead.  A _component_ also must include a template. A **template** is made up of the HTML that we want to display inside of our _selector_.  A _component_ has two halves: An annotation and a class definition.  We have one component called the **root component** that is responsible for loading its child components.  The @Component() defining our annotation is called a **decorator**. _Decorator_  are a design pattern that is used to separate modification or decoration of a class without modifying the original source code. In Angular, decorators are functions that allow a service, directive or filter to be modified prior to its usage.
+
+## Short Term Code Snippets
+Complile TypeScript: ``$ tsc app/hello.ts``
+
+##### How to write a class  
 ```ts
+class Name {
+  //Listing variables
+  variableName : type;
+
+  //A constructor acting a setter
+  constructor ( anotherVariablename:type ) {
+    this.variableName = anotherVariablename;
+  }
+
+  //Writing methods - here is a random method.
+  method() {
+    console.log(variableName);
+  }
+}
+```
+You can shorten the class declaration by adding the word public to our constructor parameter list.
+
+##### for of
+```ts
+for(var thing of things) {
+  console.log(thing);
+};
+```
+use `in` instead of `of` to put the index number of each element into the array instead of the element.
+
+###### Addin a component
+```ts
+
 @Component({
   selector: 'my-app',
   template: `
   <h1>My First Angular 2 App</h1>
   `
 })
-export class AppComponent {
-}
-
 
 export class AppComponent {
-
 }
 ```
