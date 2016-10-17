@@ -1,4 +1,7 @@
 # Creating An Angular 2 Project
+last updated _10/18/16_ by _Jonathan_  
+This is a summation of information for the [Epicodus Angular](https://www.learnhowtoprogram.com/javascript/angular-js) week long course, with additions from various documentation.
+
 Angular is a JavaScript framework that uses TypeScript. This template uses the Asset Manager Gulp, runtime Node.js, and package managers bower and npm (bower to manage front end depedencies).  There is an API that allows using standard ECMAScript 5 JavaScript, but it is recommended to use TypeScript.  
 
 What is TypeScript?

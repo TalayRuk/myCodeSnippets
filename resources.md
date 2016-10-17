@@ -127,6 +127,7 @@ API | Hoster |Description | Link
 Topic | Title / Description | Link
 :---:|---|---:
 Jobs| 5 Types of tech companies you want to work for  | [www.codefellows.org](https://www.codefellows.org/blog/5-types-of-tech-companies-you-should-consider-working-for/)
+Jobs | I'm about to graduate from Dev Bootcamp (programming bootcamp), how can I best spend my time job hunting?| [www.quora.com](https://www.quora.com/Im-about-to-graduate-from-Dev-Bootcamp-programming-bootcamp-how-can-I-best-spend-my-time-job-hunting)
 Motivation|The Learning Myth: Why I'll Never Tell My Son He's Smart|[www.khanacademy.org](https://www.khanacademy.org/about/blog/post/95208400815/the-learning-myth-why-ill-never-tell-my-son-hes)
 Diversity|The Other Side of Diversity|[medium.com](https://medium.com/this-is-hard/the-other-side-of-diversity-1bb3de2f053e#.p1j19rfeo)
 Motivation|8 easy ways to $%^& up your code school experience|[www.linkedin.com](https://www.linkedin.com/pulse/8-easy-ways-up-your-code-school-experience-perry-eising)
