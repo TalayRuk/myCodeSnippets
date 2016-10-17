@@ -20,7 +20,8 @@ Angular is a JavaScript framework that uses TypeScript. The design of this proje
 ## Set up
 + Install node.js and npm.
 + Install TypeScript globally as a regular npm package `npm install typescript -g`.  Check installation by checking TypeScript version `tsc -v`.  
-  + If using the text editor Atom, optionaly install `apm install atom-typescript` to use autocomplete and TypeScript specific linting.  Having a TypeScript package installed for your text editor allows the compiler to warn you about errors as you type, without even needing to compile
+  + If using the text editor Atom, optionaly install `apm install atom-typescript` to use autocomplete and TypeScript specific linting.  Having a TypeScript package installed for your text editor allows the compiler to warn you about errors as you type, without even needing to compile.
++ Run `npm install`, `bower install`, `gulp build`, `gulp serve`.
 
 
 ### Documentation
@@ -47,6 +48,7 @@ Angular is a JavaScript framework that uses TypeScript. The design of this proje
 ![File](img/file.png "file") tsconfig.json  
 ![File](img/file.png "file") typings.json
 
+Most of the .gitignore files will be created by `gulp build`.
 ###### .gitignore
 ```
 node_modules/
@@ -62,10 +64,19 @@ typings/
 ```js
 ///////////////////// DEPENDENCIES AND VARIABLES //////////////////////
 var gulp = require('gulp');
-
 // used for concatenating/minifying bower files and other js/css
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+// used for build and clean tasks.
+var utilities = require('gulp-util');
+var buildProduction = utilities.env.production;
+var del = require('del');
+// set up server with watchers and run typescript compiler in the shell.
+var browserSync = require('browser-sync').create();
+var shell = require('gulp-shell');
+// sass dependencies.
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 // used for pulling in bower files.
 var lib = require('bower-files')({
   "overrides":{
@@ -78,19 +89,6 @@ var lib = require('bower-files')({
     }
   }
 });
-
-// used for build and clean tasks.
-var utilities = require('gulp-util');
-var buildProduction = utilities.env.production;
-var del = require('del');
-
-// set up server with watchers and run typescript compiler in the shell.
-var browserSync = require('browser-sync').create();
-var shell = require('gulp-shell');
-
-// sass dependencies.
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 
 ////////////////////// TYPESCRIPT //////////////////////
 // clean task
@@ -182,7 +180,7 @@ gulp.task('build', ['ts'], function(){
 });
 ```
 
-Few changes are needed in `index.html` because we are using gulp to set up our assets and `<my-app>` holds all controllers.
+Few changes will ever be made to `index.html` because we are using gulp to set up our assets and `<my-app>` holds all controllers.
 ###### index.html
 ```html
 <html>
@@ -212,7 +210,7 @@ Few changes are needed in `index.html` because we are using gulp to set up our a
   </body>
 </html>
 ```
-
+The next four files are taken from Angular documentation with a few additions to add other packages (as seen above).
 ###### systemjs.config.js
 ```js
 /**
@@ -429,6 +427,11 @@ All properties and methods are public by default. This means they can be accesse
 **Components:** are the basic building blocks of an Angular 2 app.  _Components_ are represented by a custom HTML element, like `<user-profile>.` Data is passed in using attributes, like `<user-profile name="Diane" job="Teacher">`.  When the value of an attribute changes, the component automatically updates the user interface!  Components are isolated--they can't directly change other components--but instead, components may emit actions that are received by parent component. The parent may then take an action of its own, which may be passed into its child components.  This is referred to as _"data down, actions up"_   A _component_ has a selector property.
 
 **Selectors** interact with DOM elements, the _component's selector is the DOM element the component is attached to_ (generally a new HTML tag). A selector is a native AngularJS directive that transform a simple `<select>` box into a full html select with typeahead.  A _component_ also must include a template. A **template** is made up of the HTML that we want to display inside of our _selector_.  A _component_ has two halves: An annotation and a class definition.  We have one component called the **root component** that is responsible for loading its child components.  The @Component() defining our annotation is called a **decorator**. _Decorator_  are a design pattern that is used to separate modification or decoration of a class without modifying the original source code. In Angular, decorators are functions that allow a service, directive or filter to be modified prior to its usage.
+
+##### Terms
++ **Modules:** Modular "containers" of code assigned to specific names (or "namespaces"). They can be exported, then called upon for use in other code.  Modules allow splitting up programs into multiple files, while wrapping our declarations in particular namespaces.
++ **Export:** A keyword that may be added to any declarations you may want to access in other files.
++ **Entry point:** The file that will launch first when an app is first booted up.
 
 ## Short Term Code Snippets
 Complile TypeScript: ``$ tsc app/hello.ts``
