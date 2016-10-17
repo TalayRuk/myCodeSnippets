@@ -22,16 +22,15 @@ Notes:
 
 ## Starting Files
 
-###### file structure
-
+###### File Structure
 ![Folder](img/folder.png "Folder") resources   
 -- ![Folder](img/folder.png "Folder") styles  
 -- ![Folder](img/folder.png "Folder") js  
 -- ![Folder](img/folder.png "Folder") images   
-[Folder](img/folder.png "Folder") app  
+![Folder](img/folder.png "Folder") app  
 -- ![File](img/file.png "file") app.component.ts  
--- ![File](img/file.png "file") app.module.ts
--- ![File](img/file.png "file") main.ts
+-- ![File](img/file.png "file") app.module.ts  
+-- ![File](img/file.png "file") main.ts  
 ![File](img/file.png "file") index.html  
 ![File](img/file.png "file") systemjs.config.js  
 ![File](img/file.png "file") package.json  
@@ -39,9 +38,8 @@ Notes:
 ![File](img/file.png "file") typings.json  
 ![File](img/file.png "file") .gitignore  
 
-Few changes are needed to this file because gulp is used at as the package manager and we are loading a master parent attribute `<my app>` that will contain all other components.
+Few changes are needed in `index.html` because we are using gulp to set up our assets and `<my-app>` holds all controllers.
 ###### index.html
-
 ```html
 <html>
   <head>
