@@ -23,20 +23,32 @@ Notes:
 ## Starting Files
 
 ###### File Structure
-![Folder](img/folder.png "Folder") resources   
--- ![Folder](img/folder.png "Folder") styles  
--- ![Folder](img/folder.png "Folder") js  
--- ![Folder](img/folder.png "Folder") images   
 ![Folder](img/folder.png "Folder") app  
 -- ![File](img/file.png "file") app.component.ts  
 -- ![File](img/file.png "file") app.module.ts  
 -- ![File](img/file.png "file") main.ts  
+![Folder](img/folder.png "Folder") resources   
+-- ![Folder](img/folder.png "Folder") styles  
+-- ![Folder](img/folder.png "Folder") js  
+-- ![Folder](img/folder.png "Folder") images   
+![File](img/file.png "file") .gitignore  
 ![File](img/file.png "file") index.html  
-![File](img/file.png "file") systemjs.config.js  
 ![File](img/file.png "file") package.json  
+![File](img/file.png "file") systemjs.config.js  
 ![File](img/file.png "file") tsconfig.json  
 ![File](img/file.png "file") typings.json  
-![File](img/file.png "file") .gitignore  
+
+###### .gitignore
+```
+node_modules/
+npm-debug.log
+bower_components/
+app/*.js
+app/*.js.map
+.DS_Store
+build/
+typings/
+```
 
 Few changes are needed in `index.html` because we are using gulp to set up our assets and `<my-app>` holds all controllers.
 ###### index.html
@@ -67,6 +79,53 @@ Few changes are needed in `index.html` because we are using gulp to set up our a
     <my-app>Loading...</my-app>
   </body>
 </html>
+```
+
+###### systemjs.config.js
+```js
+/**
+ * System configuration for Angular 2 samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    paths: {
+      // paths serve as alias
+      'npm:': 'node_modules/'
+    },
+    // map tells the System loader where to look for things
+    map: {
+      // our app is within the app folder
+      app: 'app',
+      // angular bundles
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      // other libraries
+      'rxjs':                       'npm:rxjs',
+      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: './main.js',
+        defaultExtension: 'js'
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      },
+      'angular2-in-memory-web-api': {
+        main: './index.js',
+        defaultExtension: 'js'
+      }
+    }
+  });
+})(this);
 ```
 
 ###### package.json
@@ -148,64 +207,8 @@ Few changes are needed in `index.html` because we are using gulp to set up our a
 }
 ```
 
-###### systemjs.config.js
-```js
-/**
- * System configuration for Angular 2 samples
- * Adjust as necessary for your application needs.
- */
-(function (global) {
-  System.config({
-    paths: {
-      // paths serve as alias
-      'npm:': 'node_modules/'
-    },
-    // map tells the System loader where to look for things
-    map: {
-      // our app is within the app folder
-      app: 'app',
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      // other libraries
-      'rxjs':                       'npm:rxjs',
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-    },
-    // packages tells the System loader how to load when no filename and/or no extension
-    packages: {
-      app: {
-        main: './main.js',
-        defaultExtension: 'js'
-      },
-      rxjs: {
-        defaultExtension: 'js'
-      },
-      'angular2-in-memory-web-api': {
-        main: './index.js',
-        defaultExtension: 'js'
-      }
-    }
-  });
-})(this);
-```
 
-###### .gitignore
-```
-node_modules/
-npm-debug.log
-bower_components/
-app/*.js
-app/*.js.map
-.DS_Store
-build/
-typings/
-```
+
 
 ###### gulpfile.js
 ```js
