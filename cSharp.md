@@ -278,7 +278,117 @@ namespace Tests
 
 ```
 
-To Memorize:
+## Background on cSharp
+
+From Epicodus LEsson cSharp.
+> To have access to C#, we need to install an implementation of the .NET Framework. This will give us and what is called the Common Language Runtime. We recommend using Mono. It's open-source and even better, it's cross-platform.
+
+> C#, pronounced see sharp, began development in the late 90's. Released as a part of the .NET Framework initiative in July 2000, C# is part of a family of computer languages which evolved out of the C/C++ Programming Language, which originated in the late 60's at Bell Labs.
+
+> Today, C# is the object-oriented component of the ASP.NET Framework. Microsoft Chief Architect and C# team leader Anders Hejlsberg described it as an iteration and improvement of the C++ language. Hejlsberg touted C# as "the first component-oriented language in the C/C++ family." As a result, it is " a simple, modern, general-purpose, object-oriented programming language" and to be "economical with regard to memory and processing power requirements".
+
+From Wikipedia
+> The Common Language Runtime (CLR), the virtual machine component of Microsoft's .NET framework, manages the execution of .NET programs. A process known as just-in-time compilation converts compiled code into machine instructions which the computer's CPU then executes.[1] The CLR provides additional services including memory management, type safety, exception handling, garbage collection, security and thread management. All programs written for the .NET framework, regardless of programming language, are executed by the CLR. All versions of the .NET framework include CLR.
+
+> A compiler is a computer program (or a set of programs) that transforms source code written in a programming language (the source language) into another computer language (the target language), with the latter often having a binary form known as object code.
+
+## Basic Methods / Code Snippets
+
+### Set up a Namespace and Class
+```csharp
+namespace NameOfNamespace
+{
+  attribute class NameOfClass
+  {
+
+  }
+}
+```
+Example
+```csharp
+namespace MyProject
+{
+  public class Project
+  {
+    //Everything goes here  
+  }
+}
+
+```
+
+
+#### How to create a property inside a class
+
+```csharp
+
+attributes _propertyName;
+```
+Example
+```csharp
+private string _input1;
+
+//properteis should always have the attribute private
+
+```
+
+#### How to create a Setter inside a class
+
+```csharp
+attributes NameOftheFunction( attribute prameter)
+{
+ _property = parameter;
+}
+```
+Example
+```csharp
+public void SetInput1 (string aString)
+{
+  _input1 = aString;
+}
+//Attribute examples are: public, private, void, string, int, static
+```
+#### How to write a Getter inside a class
+
+```csharp
+attributes AnyName ()
+{
+  return _property
+}
+```
+Example
+```csharp
+ public string GetInput1 ()
+ {
+   return _input1
+ }
+```
+
+#### How to create an instance of a class
+
+```csharp
+
+ClassName newIstanceName = new ClassName ();
+//Attribute examples are: public, private, void, string, int, static
+```
+Example
+```csharp
+Project newProject = new Project ();
+```
+
+#### How to use a method in a class on an instance of the class
+
+```csharp
+
+newIstanceName.MethodName(parameters?);
+//Attribute examples are: public, private, void, string, int, static
+```
+Example
+```csharp
+newProject.SetInput1("hello");
+```
+#### Make a DB Connection
+`DB.Connection()` is a method in the database.cs file.
+
 ```cSharp
   List<Task> allTasks = new List<Task>{};
 
@@ -305,49 +415,4 @@ To Memorize:
     conn.Close();        
   }
   return allTasks;
-
-
-```
-
-## Background on cSharp
-
-From Epicodus LEsson cSharp.
-> To have access to C#, we need to install an implementation of the .NET Framework. This will give us and what is called the Common Language Runtime. We recommend using Mono. It's open-source and even better, it's cross-platform.
-
-> C#, pronounced see sharp, began development in the late 90's. Released as a part of the .NET Framework initiative in July 2000, C# is part of a family of computer languages which evolved out of the C/C++ Programming Language, which originated in the late 60's at Bell Labs.
-
-> Today, C# is the object-oriented component of the ASP.NET Framework. Microsoft Chief Architect and C# team leader Anders Hejlsberg described it as an iteration and improvement of the C++ language. Hejlsberg touted C# as "the first component-oriented language in the C/C++ family." As a result, it is " a simple, modern, general-purpose, object-oriented programming language" and to be "economical with regard to memory and processing power requirements".
-
-From Wikipedia
-> The Common Language Runtime (CLR), the virtual machine component of Microsoft's .NET framework, manages the execution of .NET programs. A process known as just-in-time compilation converts compiled code into machine instructions which the computer's CPU then executes.[1] The CLR provides additional services including memory management, type safety, exception handling, garbage collection, security and thread management. All programs written for the .NET framework, regardless of programming language, are executed by the CLR. All versions of the .NET framework include CLR.
-
-> A compiler is a computer program (or a set of programs) that transforms source code written in a programming language (the source language) into another computer language (the target language), with the latter often having a binary form known as object code.
-
-## Methods to Remember
-
-```csharp
-
-//char
-char =
-
-// strings
-string phrase = "Programming is AWESOME";
-phrase.ToUpper();
-phrase.ToLower();
-phrase.Contains(phraseTwo);
-string phrase3 = phrase.Replace("hello", "goodbye")
-int number = 56;  number.ToString();
-" Hi ".Trim();
-
-//ints
-string num = "32";
-int newNum = int.Parse(num);
-
-//bools
-string phrase = "Gosh";
-bool answer = phrase.StartsWith("g");
-bool answer1 = phrase.EndsWith("o");
-
-//Dictionary
-Dictionary<string, string> myDictionary = new Dictionary<string, string>() { {"A", "apple"}, {"B", "bear"} };
 ```
