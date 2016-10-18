@@ -1,8 +1,8 @@
 # Creating An Angular 2 Project
-last updated _10/18/16_ by _Jonathan_  
-This is a summation of information for the [Epicodus Angular](https://www.learnhowtoprogram.com/javascript/angular-js) week long course, with additions from various documentation.
+Last updated _10/18/16_ by _Jonathan_  
+This information abbridges the [Epicodus Angular](https://www.learnhowtoprogram.com/javascript/angular-js) course, with additions from Angular and TypeScript documentation.
 
-Angular is a JavaScript framework that uses TypeScript. This template uses the Asset Manager Gulp, runtime Node.js, and package managers bower and npm (bower to manage front end depedencies).  There is an API that allows using standard ECMAScript 5 JavaScript, but it is recommended to use TypeScript.  
+Angular is a JavaScript framework. This template uses the Asset Manager Gulp, runtime Node.js, and package managers bower and npm (bower to manage front end depedencies).  There is an API that allows using standard ECMAScript 5 JavaScript, but it is recommended to write in TypeScript for Angular.  
 
 What is TypeScript?
 > TypeScript starts from the same syntax and semantics that millions of JavaScript developers know today. Use existing JavaScript code, incorporate popular JavaScript libraries, and call TypeScript code from JavaScript. TypeScript compiles to clean, simple JavaScript code which runs on any browser, in Node.js, or in any JavaScript engine that supports ECMAScript 3 (or newer).<sup>2</sup>
@@ -19,22 +19,22 @@ Angular Extensibility
 > AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs.<sup>1</sup>
 
 Data Binding
-> Data-binding is an automatic way of updating the view whenever the model changes, as well as updating the model whenever the view changes. This is awesome because it eliminates DOM manipulation from the list of things you have to worry about.
+> Data-binding is an automatic way of updating the view whenever the model changes, as well as updating the model whenever the view changes. This is awesome because it eliminates DOM manipulation from the list of things you have to worry about.<sup>1</sup>
 
 Controller
-> Controllers are the behavior behind the DOM elements. AngularJS lets you express the behavior in a clean readable form without the usual boilerplate of updating the DOM, registering callbacks or watching model changes.
+> Controllers are the behavior behind the DOM elements. AngularJS lets you express the behavior in a clean readable form without the usual boilerplate of updating the DOM, registering callbacks or watching model changes.<sup>1</sup>
 
 Deep Linking
-> A deep link reflects where the user is in the app, this is useful so users can bookmark and email links to locations within apps. Round trip apps get this automatically, but AJAX apps by their nature do not. AngularJS combines the benefits of deep link with desktop app-like behavior.
+> A deep link reflects where the user is in the app, this is useful so users can bookmark and email links to locations within apps. Round trip apps get this automatically, but AJAX apps by their nature do not. AngularJS combines the benefits of deep link with desktop app-like behavior.<sup>1</sup>
 
 Server Communication
-> AngularJS provides built-in services on top of XHR as well as various other backends using third party libraries. Promises further simplify your code by handling asynchronous return of data. An example is using the AngularFire library to wire up a Firebase backend to a simple Angular app.
+> AngularJS provides built-in services on top of XHR as well as various other backends using third party libraries. Promises further simplify your code by handling asynchronous return of data. An example is using the AngularFire library to wire up a Firebase backend to a simple Angular app.<sup>1</sup>
 
 Directives
-> AngularJS Directives. AngularJS directives are extended HTML attributes with the prefix ng- . The ng-app directive initializes an AngularJS application. The ng-init directive initializes application data. The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. Directives is a unique and powerful feature available only in Angular. Directives let you invent new HTML syntax, specific to your application.
+> AngularJS directives are extended HTML attributes with the prefix ng- . The ng-app directive initializes an AngularJS application. The ng-init directive initializes application data. The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. Directives is a unique and powerful feature available only in Angular. Directives let you invent new HTML syntax, specific to your application.<sup>1</sup>
 
 Testable
-> AngularJS was designed from ground up to be testable. It encourages behavior-view separation, comes pre-bundled with mocks, and takes full advantage of dependency injection. It also comes with end-to-end scenario runner which eliminates test flakiness by understanding the inner workings of AngularJS.
+> AngularJS was designed from ground up to be testable. It encourages behavior-view separation, comes pre-bundled with mocks, and takes full advantage of dependency injection. It also comes with end-to-end scenario runner which eliminates test flakiness by understanding the inner workings of AngularJS.<sup>1</sup>
 
 ## Set up
 + Install node.js and npm.
@@ -43,7 +43,7 @@ Testable
 + Run `npm install`, then `bower install`, then `gulp build`, then `gulp serve`.
 
 ### Documentation
-+ <sup>1</sup>  [Angular 2 Documentation](https://angular.io/docs/ts/latest/quickstart.html)
++ <sup>1 </sup>  [Angular 2 Documentation](https://angular.io/docs/ts/latest/quickstart.html)
 + <sup>2 </sup> [TypeScript Documentation](https://www.typescriptlang.org/)
 + <sup>3 </sup> [ECMAScript Wikipedia Page](https://en.wikipedia.org/wiki/ECMAScript)
 
@@ -58,7 +58,7 @@ Testable
 -- ![Folder](img/folder.png "Folder") styles  
 -- ![Folder](img/folder.png "Folder") js  
 -- ![Folder](img/folder.png "Folder") images   
-![File](img/file.png "file") .gitignore
+![File](img/file.png "file") .gitignore  
 ![File](img/file.png "file") bower.json    
 ![File](img/file.png "file") gulpfile.js  
 ![File](img/file.png "file") index.html  
@@ -79,29 +79,6 @@ app/*.js.map
 build/
 typings/
 
-```
-###### bower.json
-```
-{
-  "name": "angular2-skeleton-app",
-  "description": "",
-  "main": "",
-  "authors": [
-    "Andrew Niekamp <andrew.f.niekamp@gmail.com>"
-  ],
-  "license": "ISC",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "^3.3.7"
-  }
-}
 ```
 
 ###### gulpfile.js
@@ -265,7 +242,32 @@ Few changes are made to the basic `index.html` because gulp sets up local assets
   </body>
 </html>
 ```
-The next four files are taken from Angular documentation with a few additions to many gulp packages, typing, typescript, and others.
+The next four files are taken from Angular documentation.  Additions to the json files include packages for gulp, typing, typescript, and others.
+
+###### bower.json
+```
+{
+  "name": "angular2-skeleton-app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Andrew Niekamp <andrew.f.niekamp@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
+```
+
 ###### systemjs.config.js
 ```js
 /**
@@ -399,6 +401,7 @@ The next four files are taken from Angular documentation with a few additions to
 
 
 ## Angular Files
+These files load other components and parts of our app, as well as Angular specific dependencies such as the BrowserModule, which is used to let Angular communicate with the browser.
 
 ###### app/app.component.ts
 ```ts
@@ -415,8 +418,7 @@ export class AppComponent {
 }
 ```
 
-This file will also be responsible for loading other components and parts of our app, as well as Angular specific dependencies such as the BrowserModule, which is used to let Angular communicate with the browser.
-###### app/app.component.ts
+###### app/app.module.ts
 ```ts
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
@@ -444,7 +446,7 @@ platform.bootstrapModule(AppModule);
 ## Explanations, Definitions, Terms, Examples
 
 ### Model-View-Controller Pattern
-As web applications gain increasingly rich and complex user interfaces, a new breed of tools called "client-side MVCs."  MVC stands for Model-View-Controller and refers to a pattern where data, processing and display duties are divided into models, views and controllers.  Three of the most popular client-side JavaScript MVC tools are Angular, Ember, and React.  The MVC model was originally pioneered by React.js.
+MVC stands for Model-View-Controller and refers to a pattern where data, processing and display duties are divided into models, views and controllers.  Three of the most popular client-side JavaScript MVC tools are Angular, Ember, and React.  The MVC model was originally pioneered by React.js.
 
 ##### Terms
 + **MVC:** Abbreviation for Model-View-Controller that refers to a pattern where data, processing and display duties are divided into models, views and controllers.

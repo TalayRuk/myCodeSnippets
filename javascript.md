@@ -1,8 +1,8 @@
-#  Using NPM as a js runtime environment and GULP as an Asset Builder
+# Using Node.JS and Gulp Asset Builder
 
-There are other excellent package managers and asset builders.  **This process explains using npm, bower, and Gulp to locally host a server.**
+There are other excellent package managers and asset builders.  **This document outlines using Node.js runtime, npm and bower packet managers, and Gulp as Asset Builder.**
 
-**Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager and hence used to install node programs.  An **asset builder** is a framework to concatenate and minify or compress JavaScript and CSS assets and the chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Advantages of Gulp include the automation of common development tasks, the simplification of repetitive tasks, and a decrease in overall development time.
+**Node.js** is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine. **Npm** is a Node.js package manager and hence used to install node programs.  An **asset builder** is a framework that will do many tasks to prepare a project, such as concatenate and minify JavaScript and CSS assets for deployment.  The chosen asset builder used here is Gulp.  **Gulp** is a JavaScript-based streaming build toolkit for client-side code. It can stream client-side files for triggered events in a build environment. Advantages of Gulp include the automation of common development tasks, the simplification of repetitive tasks, and thus a decrease in overall development time.
 
 ## Documentation and Terms
 - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -13,6 +13,9 @@ There are other excellent package managers and asset builders.  **This process e
 
 
 ## Getting started
+This process describes individually downloading and add to the corresponding package.json or bower.json file.  Alternatively, copy the provided json file and `npm install` and `bower install`
+
+
 - Run ```npm init ``` in the top level of the project. This **_creates a manifest_** file and npm will store the packages and the versions here which are needed for the project.
 
 - Run ```npm install gulp -save-dev ``` to **_add gulp_**. This will __create the file *node_modules*__ and install the gulp package in it.  The **--save-dev** flag will save the gulp package to the manifest file, which is called package.json.  
@@ -53,9 +56,9 @@ bower install moment --save
 - Run ```npm install gulp-sass gulp-sourcemaps --save-dev ``` to intall Sass (optional).
 
 
-### File Structure For Setup
+## Project Files
 
-###### filestructure
+###### File Structure
 
 ![Folder](img/folder.png "Folder") css  
 -- ![Folder](img/file.png "Folder") styles.css  
@@ -164,7 +167,7 @@ tmp/
 ```
 ### Gulp File
 
-This file provides and an example for the setup of an asset pipeline based on the above Gulp packages.  All interface files end with *-interfeace.js* and are included in the function with the concatInterface dependency.  All logic files must be exported and required by the corresponding interface file. Naming convention for exporting on logical files:
+This file provides and an example for the setup of an asset pipeline based on the above Gulp packages.  All interface files end with *-interface.js* and thus included in the function with the concatInterface dependency.  All logic files must be exported and required by the corresponding interface file. Naming convention for exporting on logical files:
 ```js
 exports.ConstructorModule = Constructor;
 ```
