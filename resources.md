@@ -68,6 +68,7 @@ Hero Image | Jonathan | A full xcreen hero image effect.|[www.web2feel.com](http
 Beautiful Web Type | Jonathan | A showcase of the best typefaces from the Google web fonts directory. | [hellohappy.org](http://hellohappy.org/beautiful-web-type/)
 List Styling| Jonathan | A nice link bar--no dropdpwn |[codepen.io](http://codepen.io/secondfret/pen/GoqLK)
 Button Styler | Jonathan | Button Styler | [css3buttongenerator.com](http://css3buttongenerator.com/)
+Pizabay | Free High Qaulity Images (and videos) - Over 770,000 free stock photos | [pixabay.com/](https://pixabay.com/)
 
 ## jQuery/JS APIs & libraries
 Resource | Recommend |Description | Link
