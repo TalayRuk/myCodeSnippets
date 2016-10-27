@@ -68,18 +68,18 @@ W3 Schools Parallax | Use a container element and add a background image to the 
 Hero Image | A full xcreen hero image effect.|[www.web2feel.com](http://www.web2feel.com/creating-a-fullscreen-hero-div-for-your-site-header/)
 Beautiful Web Type | A showcase of the best typefaces from the Google web fonts directory. | [hellohappy.org](http://hellohappy.org/beautiful-web-type/)
 List Styling| A nice link bar--no dropdpwn |[codepen.io](http://codepen.io/secondfret/pen/GoqLK)
-Button Styler Button Styler | [css3buttongenerator.com](http://css3buttongenerator.com/)
+Button Styler | Button Styler | [css3buttongenerator.com](http://css3buttongenerator.com/)
 Pizabay | Free High Qaulity Images (and videos) - Over 770,000 free stock photos | [pixabay.com/](https://pixabay.com/)
 
 ## jQuery/JS APIs & libraries
 Resource | Recommend |Description | Link
-:---:|:---:|---|---:
-Report.js | Jonathan | Report.js depend on Chart.js for graph rendering. You need to add an ES6 polyfill (core-js or babel-pollyfill) to use this library. | [bi-joe.github.io](http://bi-joe.github.io/report.js/line.html)
-Popup Overlay | Jonathan |jQuery plugin for responsive and accessible modal windows and tooltips|[dev.vast.com](http://dev.vast.com/jquery-popup-overlay/)
-Chart.js|Jonathan|Simple yet flexible JavaScript charting for designers & developers|[www.chartjs.org](http://www.chartjs.org/)
-Stupid jQuery Table Sort|Jonathan|This is a stupid jQuery table sorting plugin. Nothing fancy, nothing really impressive. Overall, stupidly simple. Requires jQuery 1.7 or newer.|[github.com/joequery/](https://github.com/joequery/Stupid-Table-Plugin)
-jquery Rain |Jonathan | Librayer of jQuery Project | http://www.jqueryrain.com/
-jquery UI | Jonathan | Basic documentation and librayer of jQuery projects | https://jqueryui.com/
+:---:|---|---:
+Report.js |  Report.js depend on Chart.js for graph rendering. You need to add an ES6 polyfill (core-js or babel-pollyfill) to use this library. | [bi-joe.github.io](http://bi-joe.github.io/report.js/line.html)
+Popup Overlay | jQuery plugin for responsive and accessible modal windows and tooltips|[dev.vast.com](http://dev.vast.com/jquery-popup-overlay/)
+Chart.js|Simple yet flexible JavaScript charting for designers & developers|[www.chartjs.org](http://www.chartjs.org/)
+Stupid jQuery Table Sort|This is a stupid jQuery table sorting plugin. Nothing fancy, nothing really impressive. Overall, stupidly simple. Requires jQuery 1.7 or newer.|[github.com/joequery/](https://github.com/joequery/Stupid-Table-Plugin)
+jquery Rain |Librayer of jQuery Project | http://www.jqueryrain.com/
+jquery UI | Basic documentation and librayer of jQuery projects | https://jqueryui.com/
 
 ## API
 API |Description | Link
