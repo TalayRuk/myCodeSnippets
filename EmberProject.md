@@ -3,19 +3,19 @@ Last updated _10/27/16_ by _Jonathan_
 
 This is a summation of information for the [Epicodus Ember](https://www.learnhowtoprogram.com/javascript/ember-js) two week block, with additions from various documentation, for creating an ember project.
 
-##### Create an ember project
-Run `ember new [project-name]`
-(optional) `ember install ember-bootstrap`  
-Run `ember s`  
-Visit your app at http://localhost:4200.
+#### Create an ember project
++ Run `ember new [project-name]`
++ (optional) `ember install ember-bootstrap`  
++ Run `ember s`  
++ Visit your app at http://localhost:4200.
 
-##### Start a cloned project
-Run `npm install`  
-Run `bower install`
-Run `ember s`  
-Visit your app at http://localhost:4200.
+#### Start a cloned project
++ Run `npm install`  
++ Run `bower install`
++ Run `ember s`  
++ Visit your app at http://localhost:4200.
 
-##### Folder Structure:
+#### Folder Structure:
 + **app:** This is where folders and files for models, components, routes, templates and styles are stored. The vast majority of our coding happens in this folder.
 + **bower-components / bower.json:** bower is a dependency management tool. It is used to manage front-end plugins and component dependencies (HTML, CSS, JavaScript, etc). All bower components are installed in the bower-components directory. If we open bower.json, we see the list of dependencies that are installed by Ember automatically. These include Ember, jQuery, Ember Data and QUnit (for testing). If we add additional front-end dependencies, like bootstrap, they will also be listed here and their files added to the bower-components directory.
 + **config:** Contains the environment.js file which lists environmental settings and configurations for our app.
