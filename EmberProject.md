@@ -3,8 +3,16 @@ Last updated _10/27/16_ by _Jonathan_
 
 This is a summation of information for the [Epicodus Ember](https://www.learnhowtoprogram.com/javascript/ember-js) two week block, with additions from various documentation, for creating an ember project.
 
-## Create an Ember Project
-Run `ember new [project-name]`
+##### Create an ember project
+Run `ember new [project-name]`  
+Run `ember s`  
+Visit your app at http://localhost:4200.
+
+##### Start a cloned project
+Run `npm install`  
+Run `bower install`
+Run `ember s`  
+Visit your app at http://localhost:4200.
 
 ##### Folder Structure:
 + **app:** This is where folders and files for models, components, routes, templates and styles are stored. The vast majority of our coding happens in this folder.
@@ -18,13 +26,6 @@ Run `ember new [project-name]`
 + **tmp:** Temporary files live here.
 + **ember-cli-build.js:** Behind the scenes, Ember CLI uses a tool called Broccoli to compile our code. This file contains settings for how Broccoli should build our app.
 
-##### Install ember dependencies
-Run `npm install`  
-Run `bower install`
-
-##### Start the server
-Run `ember s`  
-Visit your app at http://localhost:4200.
 
 # Common commands and file structure
 
@@ -84,6 +85,56 @@ export default DS.Model.extend({
 ```
 
 ## Routes
+
+### Route handler
+
+###### Returning objects contained within the route handler
+```js
+import Ember from 'ember';
+
+var rentals = [{
+  id: 1,
+  owner: "Veruca Salt",
+  city: "San Francisco",
+  type: "Estate",
+  bedrooms: 15,
+  image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+}, {
+  id: 2,
+  owner: "Mike TV",
+  city: "Seattle",
+  type: "Condo",
+  bedrooms: 1,
+  image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg"
+}];
+
+export default Ember.Route.extend({
+  model() {
+    return rentals;
+  },
+```
+###### Getting a set of objects from firebase
+```js
+model() {
+  return this.store.findAll('rental');
+},
+```
+
+###### Getting one object from a single Model from firebase
+```js
+model(params) {
+  return this.store.findRecord('rental', params.rental_id);
+},
+```
+###### Getting All Objects From Multiple Models from firebase
+```js
+model() {
+  return Ember.RSVP.hash({
+    rental: this.store.findAll('rental'),
+    review: this.store.findAll('review')
+  });
+```
+_Ember.RSVP.hash is waiting for rental and review to load before passing information. It's waiting for the other promises and then returning the data in one promise._
 
 ## Using Firebase with Ember data
 [Set up an account.](https://firebase.google.com/)  Run `ember install emberfire`.  This will create app/adapters/application.js.  Remember **table names in Firebase will be a plural model name, and the model hooks in your routes will refer to the singular model name.**  
