@@ -21,23 +21,23 @@ MarkDown | Markdown cheatsheet  | [github.com/adam-p](https://github.com/adam-p/
 GitPrint | Prints Markdown files. | [https://gitprint.com/](gitprint.com/)
 
 ## .Net Core and ASP.net
-.Net | Recommend | Description | Link
+.Net | Description | Link
 :---:|:---:|---|---:
-.Net Power Point| Stephen | Seattle Code Camp slides from September 2016  | [onedrive.live.com](https://onedrive.live.com/?authkey=%21ANJynLkWT3h8mes&id=D5C127793547081C%21128521&cid=D5C127793547081C)
-Asp.Net Security| Sid |Implement Security using ASP.NET Core Identity in 10 Easy Steps  BinaryIntellect Knowledge Base| [www.binaryintellect.net](http://www.binaryintellect.net/articles/b957238b-e2dd-4401-bfd7-f0b8d984786d.aspx)
-Markdown Mode | Sid | A language service for editing Markdown files.| [visualstudiogallery.msdn.microsoft.com](https://visualstudiogallery.msdn.microsoft.com/0855e23e-4c4c-4c82-8b39-24ab5c5a7f79)
+.Net Power Point| Seattle Code Camp slides from September 2016  | [onedrive.live.com](https://onedrive.live.com/?authkey=%21ANJynLkWT3h8mes&id=D5C127793547081C%21128521&cid=D5C127793547081C)
+Asp.Net Security| Implement Security using ASP.NET Core Identity in 10 Easy Steps  BinaryIntellect Knowledge Base| [www.binaryintellect.net](http://www.binaryintellect.net/articles/b957238b-e2dd-4401-bfd7-f0b8d984786d.aspx)
+Markdown Mode |  A language service for editing Markdown files.| [visualstudiogallery.msdn.microsoft.com](https://visualstudiogallery.msdn.microsoft.com/0855e23e-4c4c-4c82-8b39-24ab5c5a7f79)
 
 ## Csharp
-C# | Recommend | Description| Link
-:---:|:---:|:---:|---:
-Getting Started with C#| Jonathan | This tutorial is aimed at people who are learning C# for the first time. No prior programming knowledge is required, but if you're coming from another language, many of the concepts will already be familiar to you and you should be able to move through the tutorial more quickly.  |[www.microsoft.com](https://www.microsoft.com/net/tutorials/csharp/getting-started)
-The Yellow Book |Ric| BOOK : The C# Yellow Book is used by the Department of Computer Science in the University of Hull as the basis of the First Year programming course. | [www.robmiles.com](http://www.robmiles.com/c-yellow-book/)
-Mono | Epicodus | Mono is a software platform designed to allow developers to easily create cross platform applications part of the .NET Foundation. | [www.mono-project.com](http://www.mono-project.com/download/#download-win)
-Mono for PwrShl | Epicodus | Setting up Mono first time | [learnhowtoprogram.com](https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c)
-Visual Studio | Epicodus | Full-featured and extensible tool for developers building non-enterprise applications | [beta.visualstudio.com](https://beta.visualstudio.com/downloads/)
+C# |  Description| Link
+:---:|:---:|---:
+Getting Started with C#| This tutorial is aimed at people who are learning C# for the first time. No prior programming knowledge is required, but if you're coming from another language, many of the concepts will already be familiar to you and you should be able to move through the tutorial more quickly.  |[www.microsoft.com](https://www.microsoft.com/net/tutorials/csharp/getting-started)
+The Yellow Book | BOOK : The C# Yellow Book is used by the Department of Computer Science in the University of Hull as the basis of the First Year programming course. | [www.robmiles.com](http://www.robmiles.com/c-yellow-book/)
+Mono | Mono is a software platform designed to allow developers to easily create cross platform applications part of the .NET Foundation. | [www.mono-project.com](http://www.mono-project.com/download/#download-win)
+Mono for PwrShl |  Setting up Mono first time | [learnhowtoprogram.com](https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c)
+Visual Studio |  Full-featured and extensible tool for developers building non-enterprise applications | [beta.visualstudio.com](https://beta.visualstudio.com/downloads/)
 SQL Server Managment Studio|Epicodus|SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server|[msdn.microsoft.com](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
-Xamarin | Sid | Deliver native Android, iOS, and Windows apps, using existing skills, teams, and code|[www.xamarin.com](https://www.xamarin.com/platform)
-Xunit Docs|Sid |Xunit Documentation: Getting started with xUnit.net (.NET Core / ASP.NET Core)|[xunit.github.io](https://xunit.github.io/docs/getting-started-dotnet-core.html)
+Xamarin | Deliver native Android, iOS, and Windows apps, using existing skills, teams, and code|[www.xamarin.com](https://www.xamarin.com/platform)
+Xunit Docs|Xunit Documentation: Getting started with xUnit.net (.NET Core / ASP.NET Core)|[xunit.github.io](https://xunit.github.io/docs/getting-started-dotnet-core.html)
 
 ## Sql
 Sql | Description | Link
