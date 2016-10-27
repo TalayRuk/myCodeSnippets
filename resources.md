@@ -60,15 +60,15 @@ Angular | Augury is the most used Google Chrome Developer Tool extension for deb
 Ember | Additional packages to integrate into Ember applications |
 
 ## CSS
-CSS | Recommend |Description | Link
-:---:|:---:|---|---:
-Boostrap|All|"Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."| [getbootstrap.com](http://getbootstrap.com/)
-Bootwatch| Stephen |Free themes for Bootstrap |[bootswatch.com](https://bootswatch.com/)
-W3 Schools Parallax | Stephen | Use a container element and add a background image to the container with a specific height. Then use the background-attachment: fixed to create the actual parallax effect. | [www.w3schools.com](http://www.w3schools.com/howto/howto_css_parallax.asp)
-Hero Image | Jonathan | A full xcreen hero image effect.|[www.web2feel.com](http://www.web2feel.com/creating-a-fullscreen-hero-div-for-your-site-header/)
-Beautiful Web Type | Jonathan | A showcase of the best typefaces from the Google web fonts directory. | [hellohappy.org](http://hellohappy.org/beautiful-web-type/)
-List Styling| Jonathan | A nice link bar--no dropdpwn |[codepen.io](http://codepen.io/secondfret/pen/GoqLK)
-Button Styler | Jonathan | Button Styler | [css3buttongenerator.com](http://css3buttongenerator.com/)
+CSS | Description | Link
+:---:|---|---:
+Boostrap|"Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."| [getbootstrap.com](http://getbootstrap.com/)
+Bootwatch| Free themes for Bootstrap |[bootswatch.com](https://bootswatch.com/)
+W3 Schools Parallax | Use a container element and add a background image to the container with a specific height. Then use the background-attachment: fixed to create the actual parallax effect. | [www.w3schools.com](http://www.w3schools.com/howto/howto_css_parallax.asp)
+Hero Image | A full xcreen hero image effect.|[www.web2feel.com](http://www.web2feel.com/creating-a-fullscreen-hero-div-for-your-site-header/)
+Beautiful Web Type | A showcase of the best typefaces from the Google web fonts directory. | [hellohappy.org](http://hellohappy.org/beautiful-web-type/)
+List Styling| A nice link bar--no dropdpwn |[codepen.io](http://codepen.io/secondfret/pen/GoqLK)
+Button Styler Button Styler | [css3buttongenerator.com](http://css3buttongenerator.com/)
 Pizabay | Free High Qaulity Images (and videos) - Over 770,000 free stock photos | [pixabay.com/](https://pixabay.com/)
 
 ## jQuery/JS APIs & libraries
