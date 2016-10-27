@@ -57,6 +57,7 @@ TypeScript | "TypeScript is a typed superset of JavvaScript that compiles to pla
 Angular | "HTML enhanced for web apps!" | [angularjs.org](https://angularjs.org/)
 Angular Resources | "A bunch of links to blog posts, articles, videos, etc for learning AngularJS 2." | [github.com](https://github.com/jmcunningham/AngularJS2-Learning)
 Angular | Augury is the most used Google Chrome Developer Tool extension for debugging and profiling Angular 2 applications. | [augury.angular.io](https://augury.angular.io/)
+Ember | Additional packages to integrate into Ember applications |
 
 ## CSS
 CSS | Recommend |Description | Link

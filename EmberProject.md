@@ -4,7 +4,8 @@ Last updated _10/27/16_ by _Jonathan_
 This is a summation of information for the [Epicodus Ember](https://www.learnhowtoprogram.com/javascript/ember-js) two week block, with additions from various documentation, for creating an ember project.
 
 ##### Create an ember project
-Run `ember new [project-name]`  
+Run `ember new [project-name]`
+(optional) `ember install ember-bootstrap`  
 Run `ember s`  
 Visit your app at http://localhost:4200.
 
@@ -26,7 +27,6 @@ Visit your app at http://localhost:4200.
 + **tmp:** Temporary files live here.
 + **ember-cli-build.js:** Behind the scenes, Ember CLI uses a tool called Broccoli to compile our code. This file contains settings for how Broccoli should build our app.
 
-
 # Common commands and file structure
 
 #### Common cli commands
@@ -35,18 +35,53 @@ Visit your app at http://localhost:4200.
 `ember g model [modelName]` make new model (js file and js testfile).  
 `ember g component [componentName]` create a new compononent (js file, hbs file, and testfile).  
 
-_**Remember** A dash is required in every component name to avoid possible naming conflicts with HTML elements_
+_Remember: a dash is required in every component name to avoid possible naming conflicts with HTML elements_
 
-## Templates
+## Views (templates and components)
 
-#### Common hbs syntax
+### Common hbs syntax
+_Remember: do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
+
+#### Helpers
 List of all "helpers" in the [EMBER.TEMPLATES.HELPERS](http://emberjs.com/api/classes/Ember.Templates.helpers.html) class.
 
-`{{#link-to 'index'}} Home {{/link-to}}`   
-`{{#if}}`, `{{else}}` ,`{{/if}}`
-`{{#each model as |object|}}`, `{{object.property}}'s`, `{{/each}}`   
+###### The link, if, and loop helper  
+```hbs
+{{#link-to 'index'}} Home {{/link-to}}   
+{{#if}}, {{else}} ,{{/if}}  
+{{#each model as |object|}}, {{object.property}}'s, {{/each}}
 
-_**Remember:** Do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
+{{input value=city id="city"}}
+// Can grab on js side through city: this.get('city')    
+```
+
+#### Template - passing data into a component and an action up
+```html
+{{new-component objects=model passedFunction = "activateFunction" }}
+```
+
+#### Component - activating a function and passing an argument to it
+```html
+{{action 'functionName' argument}}>
+```
+By default, the {{action}} helper listens for click events. If we place it on a button, the action we denote will be automatically triggered when that button is clicked.
+
+#### Cook book label
+```html
+<form>
+  <div class="form-group">
+    <label for="author">Author</label>
+    {{input value=author id="author"}}
+  </div>
+  <button {{action 'add'}}>Add</button>
+</form>
+```
+## Router
+Adjusting for dynamic routing
+###### app/router.js
+```js
+this.route('rental', {path: '/rental/:rental_id'});
+```
 
 ## Model
 Ember guide for [model relationships](https://guides.emberjs.com/v2.0.0/models/defining-models/#toc_one-to-one).  
@@ -66,6 +101,7 @@ export default DS.Model.extend({
   city: DS.attr()
 });
 ```
+
 #### Example of two Model with one to many relationships
 ###### app/models/post.js
 ```js
@@ -84,11 +120,12 @@ export default DS.Model.extend({
 });
 ```
 
-## Routes
+## Route Handler
 
-### Route handler - models
+### Route Handler - Retrieving data into the model
 
 ###### Returning objects contained within the route handler
+
 ```js
 import Ember from 'ember';
 
@@ -111,55 +148,109 @@ var rentals = [{
 export default Ember.Route.extend({
   model() {
     return rentals;
-  },
+  }
 ```
+
 ###### Getting a set of objects from firebase
 ```js
 model() {
-  return this.store.findAll('rental');
+  return this.store.findAll('object');
 },
 ```
 
 ###### Getting one object from a single Model from firebase
+This is used in part with dynamic routing.  Params.rental_id is passed by the router.  The coressponds hbs page is designed to only accept a single object from the model.
 ```js
 model(params) {
-  return this.store.findRecord('rental', params.rental_id);
+  return this.store.findRecord('object', params.rental_id);
 },
 ```
+
 ###### Getting All Objects From Multiple Models from firebase
 ```js
 model() {
   return Ember.RSVP.hash({
-    rental: this.store.findAll('rental'),
-    review: this.store.findAll('review')
+    rental: this.store.findAll('object1'),
+    review: this.store.findAll('object2')
   });
 ```
 _Ember.RSVP.hash is waiting for rental and review to load before passing information. It's waiting for the other promises and then returning the data in one promise._
 
-### Route handler - actions
-##### Methods for working with external files
+### Route Handler - Methods for interacting with a DataStore
+##### Ember methods
 ```js
- object.destroyRecord();  // Delete a record.
- object.save();   //Save a record.  We also use this to update a record by saving over parts.
- this.transitionTo('rental');  //Used in every method in a route handler.
- this.transitionTo('rental', rental.id);  //Dynamic transition.
+//Special Ember Commands for working with a datastore
+  object.destroyRecord();  // Delete a record.
+  object.save();   //Save a record.  We also use this to update a record by saving over parts.
+  .createRecord() // For creating an object before ssaving
+  object.addObject() //
+  this.transitionTo('rental');  //Used in every method in a route handler.
+  this.transitionTo('rental', rental.id);  //Dynamic transition.
 ```
+### JavaScript methods needed for more complex interaction
+##### Attached to an array
+
+###### .find()
+The find() method returns a value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+```js
+arr.find(callback[, thisArg])
+
+function isBigEnough(element) {return element >= 15;}
+[12, 5, 8, 130, 44].find(isBigEnough); // 130
+```    
+
+###### .map()
+The map() method creates a new array with the results of calling a provided function on every element in this array.
+```js
+new_array = arr.map(callback[, thisArg])
+
+var numbers = [1, 4, 9];
+var roots = numbers.map(Math.sqrt);
+//roots is now [1, 2, 3]
+//numbers is still [1, 4, 9]
+```  
+
+##### Attached to a map object
+
+###### .get()
+The get() method returns a specified element from a Map object.
+```js
+Syntax myMap.get(key);
+
+var myMap = new Map();
+myMap.set("bar", "foo");
+myMap.get("bar");  // Returns "foo".
+myMap.get("baz");  // Returns undefined.
+```
+
+###### .set()
+The set() method adds or updates an element with a specified key and value to a Map object.
+```js
+myMap.set(key, value);
+
+// Add new elements to the map
+myMap.set("bar", "foo");
+myMap.set(1, "foobar");
+// Update an element in the map
+myMap.set("bar", "baz");
+```        
+### Route Handler -  Cook Book Functions
 
 ###### Adding a simple action
 ```js
-
+deleteReview(object) {
+    object.destroyRecord();
+    this.transitionTo('rental');
+  }
 ```
+
 ###### Adding a save action
 ```js
 save(params) {
-  var newRental=this.store.createRecord('rental',params);
-  newRental.save();
+  var newObject=this.store.createRecord('object',params);
+  newObject.save();
   this.transitionTo('index');
 }
-```
-###### Adding a simple action
-```js
-
 ```
 
 ###### How to write an update function
@@ -173,6 +264,73 @@ update(object, params) {    //Params are grabbed at the component level, usually
   object.save();
   this.transitionTo('dynamicRoute', object.id);
 },
+```
+###### Writing add function for connecting with child.
+```js
+addReview(params) {
+  var newReview=this.store.createRecord('review',params);
+  var rental = params.rental;
+  rental.get('reviews').addObject(newReview);
+  newReview.save().then(function() {
+    return rental.save();
+  });
+  this.transitionTo('rental', rental);
+},
+
+add(params) {
+  var waitAdd=this.store.createRecord('parent',params);
+  var parent = params.parent;    //passed in params originally
+  parent.get('parents').addObject(waitAdd);
+  newReview.save().then(function() {
+    return rental.save();
+  });
+  this.transitionTo('rental', rental);
+}
+```
+
+###### Writing a delete function to also delete child object relationship.
+```js
+deleteRental(rental) {
+  var review_deletions = rental.get('reviews').map(function(review) {
+    return review.destroyRecord();
+  });
+  Ember.RSVP.all(review_deletions).then(function() {
+    return rental.destroyRecord();
+  });
+  this.transitionTo('index');
+},
+
+delete(parentObject) {
+  var deleteWait = parentObject.get('linkProperty').map(function(child) {
+    return child.destroyRecord();
+  });
+  Ember.RSVP.all(deleteWait).then(function() {
+    return parentObject.destroyRecord();
+  });
+  this.transitionTo('index');
+}
+```
+## Components - JS side
+
+##### Sending up an function with an argument
+```js
+thingToShow: false,
+actions: {
+  show(){
+    this.set('thingToShow', true);
+  }
+}    
+```
+
+##### Sending up an function with an argument
+_Remember: It's important that the variable names we assign these values match the rental model’s attribute names._
+```js
+funtionToPass(){
+  var params = {
+    author: this.get('author'),
+  };
+  this.sendAction('funtionToPass', params);
+}
 ```
 
 ## Using Firebase with Ember data
@@ -229,7 +387,8 @@ export default Ember.Route.extend({
 + JSON: Stands for JavaScript Object Notation and is a standard format for communicating data between systems.
 
 #### JavaScript
-+ Constant : Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
++ Constant: Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
++ Debugger: `debugger` The debugger statement stops the execution of JavaScript, and calls (if available) the debugging function.  Using the debugger statement has the same function as setting a breakpoint in the code.
 
 #### Handle Bars
 [handlebarsjs.com/](http://handlebarsjs.com/)Handlebars Page
@@ -237,14 +396,17 @@ export default Ember.Route.extend({
 + Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.
 
 #### Ember
++ **Dynamic segment:** A dynamic segment is simply a placeholder that may be dynamically updated depending on the circumstances (ie: which link we click to travel to this route). In our case, the dynamic segment we add to the rental route will represent the id of a given rental in Firebase. Including this specific information will allow us to return only a single rental in the route's model hook.
 + **Hook:** In the Ember.js framework, this refers to a method within an Ember class.
 + **Model Hook:** A method added to a route handler responsible for returning model data to that route, and its corresponding template. A model hook looks something like this:
 + **Route Handler:** Renders a template and loads a model that is then available to that template.
 + **Model:** Represent persistent state, and typically persist information to a web server. Models outline the attributes of objects.
 + **Components:** Consists of two files: A template written in Handlebars, and a source file written in JavaScript. The files have the same name, but the template ends in the Handlebars .hbs extension, and the source file ends in the .js extension. The template defines what the component should look like and the source file controls what functionality that component has. Components are called from within templates, or within the .hbs portion of another component.
 + **Template:** Define how information is displayed, and organize the layout of HTML in an application. Ember templates use the syntax of Handlebars templates. Anything that is valid Handlebars syntax is valid Ember syntax. Templates can also display properties provided to them from their context, which is either a component or a route.
++ **Action Name:**   {{action actionname argument1 argument2}} - The actionName is in the middle.
++ **Action Handler:** the corresponding function to the action name.
 
-#### Important Ember Methods
+#### Important Ember Classes
 
 + [EMBER.MAP CLASS](http://emberjs.com/api/classes/Ember.Map.html#content) A Map stores values indexed by keys. Unlike JavaScript's default Objects, the keys of a Map can be any JavaScript object.
 + [.extend](http://emberjs.com/api/classes/Ember.CoreObject.html#method_extend)  - You can also create a subclass from any existing class by calling its extend() method.
