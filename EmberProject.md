@@ -4,7 +4,7 @@ Last updated _10/27/16_ by _Jonathan_
 This is a summation of information for the [Epicodus Ember](https://www.learnhowtoprogram.com/javascript/ember-js) two week block, with additions from various documentation, for creating an ember project.
 
 ## Create an Ember Project
-`ember new [project-name]`
+Run `ember new [project-name]`
 
 ##### Folder Structure:
 + **app:** This is where folders and files for models, components, routes, templates and styles are stored. The vast majority of our coding happens in this folder.
@@ -19,40 +19,71 @@ This is a summation of information for the [Epicodus Ember](https://www.learnhow
 + **ember-cli-build.js:** Behind the scenes, Ember CLI uses a tool called Broccoli to compile our code. This file contains settings for how Broccoli should build our app.
 
 ##### Install ember dependencies
-`npm install`  
-`bower install`
+Run `npm install`  
+Run `bower install`
 
 ##### Start the server
-`ember s`  
+Run `ember s`  
 Visit your app at http://localhost:4200.
 
-## Common commands and file structure
+# Common commands and file structure
+
+#### Common cli commands
+`ember help generate` lists commands.  
+`ember g route [routeName]` make a new route (js file, hbs file, and add route to router).  
+`ember g model [modelName]` make new model (js file and js testfile).  
+`ember g component [componentName]` create a new compononent (js file, hbs file, and testfile).  
+
+_**Remember** A dash is required in every component name to avoid possible naming conflicts with HTML elements_
+
+## Templates
 
 #### Common hbs syntax
+List of all "helpers" in the [EMBER.TEMPLATES.HELPERS](http://emberjs.com/api/classes/Ember.Templates.helpers.html) class.
+
 `{{#link-to 'index'}} Home {{/link-to}}`   
 `{{#if}}`, `{{else}}` ,`{{/if}}`
 `{{#each model as |object|}}`, `{{object.property}}'s`, `{{/each}}`   
 
 _**Remember:** Do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
 
-#### Common cli commands
-`ember help generate` lists commands.  
-`ember g route [routeName]` make a new route (js file, hbs file, and add route to router).  
-`ember g [modelName]` make new model (js file and js testfile).  
-`ember g component rental-tile` create a new compononent (js file, hbs file, and testfile). **A dash is required in every component name to avoid possible naming conflicts with HTML elements**
+## Model
+Ember guide for [model relationships](https://guides.emberjs.com/v2.0.0/models/defining-models/#toc_one-to-one).  
 
-#### Model File: _app/model/modelName_
+Basic `property: DS.attr(),`  
+For ONE-TO-ONE `DS.belongsTo('profile')` linked with `DS.belongsTo('user')`  
+For ONE-TO-MANY `DS.belongsTo('post')` linked with `DS.hasMany('comment')`  
+For MANY-TO-MANY  `DS.hasMany('tag')` inked with `DS.hasMany('post')`
+
+#### Example of a model
+###### app/model/modelName
 ```js
 import DS from 'ember-data';
 
 export default DS.Model.extend({
   owner: DS.attr(),
-  city: DS.attr(),
-  type: DS.attr(),
-  image: DS.attr(),
-  bedrooms: DS.attr()
+  city: DS.attr()
 });
 ```
+#### Example of two Model with one to many relationships
+###### app/models/post.js
+```js
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  comments: DS.hasMany('comment')
+});
+```
+###### app/models/comment.js
+```js
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  post: DS.belongsTo('post')
+});
+```
+
+## Routes
 
 ## Using Firebase with Ember data
 [Set up an account.](https://firebase.google.com/)  Run `ember install emberfire`.  This will create app/adapters/application.js.  Remember **table names in Firebase will be a plural model name, and the model hooks in your routes will refer to the singular model name.**  
