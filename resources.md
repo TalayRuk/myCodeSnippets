@@ -3,7 +3,7 @@
 ## User Libraries
 Git | Description | Link
 :---:|---|---:
-Codpene |Show off your latest creation and get feedback. Build a test case for that pesky bug. Find example design patterns and inspiration for your projects.| [codepen.io](https://codepen.io/)
+Codpen |Show off your latest creation and get feedback. Build a test case for that pesky bug. Find example design patterns and inspiration for your projects.| [codepen.io](https://codepen.io/)
 JSfiddle | Test your JavaScript, CSS, HTML or CoffeeScript online with JSFiddle code editor. | [jsfiddle.net](https://jsfiddle.net/)
 pcpartpicker|  **Hardware**: Explorebuild guides, which cover systems for all use-cases and budgets, or create your own and share it with our community.|[pcpartpicker.com](https://pcpartpicker.com/)
 
@@ -35,7 +35,7 @@ The Yellow Book | BOOK : The C# Yellow Book is used by the Department of Compute
 Mono | Mono is a software platform designed to allow developers to easily create cross platform applications part of the .NET Foundation. | [www.mono-project.com](http://www.mono-project.com/download/#download-win)
 Mono for PwrShl |  Setting up Mono first time | [learnhowtoprogram.com](https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c)
 Visual Studio |  Full-featured and extensible tool for developers building non-enterprise applications | [beta.visualstudio.com](https://beta.visualstudio.com/downloads/)
-SQL Server Managment Studio|Epicodus|SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server|[msdn.microsoft.com](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
+SQL Server Managment Studio|SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server|[msdn.microsoft.com](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
 Xamarin | Deliver native Android, iOS, and Windows apps, using existing skills, teams, and code|[www.xamarin.com](https://www.xamarin.com/platform)
 Xunit Docs|Xunit Documentation: Getting started with xUnit.net (.NET Core / ASP.NET Core)|[xunit.github.io](https://xunit.github.io/docs/getting-started-dotnet-core.html)
 
