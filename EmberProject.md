@@ -35,15 +35,13 @@ This is a summation of information for the [Epicodus Ember](https://www.learnhow
 `ember g model [modelName]` make new model (js file and js testfile).  
 `ember g component [componentName]` create a new compononent (js file, hbs file, and testfile).  
 
-_Remember: a dash is required in every component name to avoid possible naming conflicts with HTML elements_
+_Remember: a dash is required in every component name to avoid possible naming conflicts with HTML elements._
 
-## Views (templates and components)
+## Views - hbs
 
 ### Common hbs syntax
-_Remember: do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
 
-#### Helpers
-List of all "helpers" in the [EMBER.TEMPLATES.HELPERS](http://emberjs.com/api/classes/Ember.Templates.helpers.html) class.
+### Helpers
 
 ###### The link, if, and loop helper  
 ```hbs
@@ -54,19 +52,23 @@ List of all "helpers" in the [EMBER.TEMPLATES.HELPERS](http://emberjs.com/api/cl
 {{input value=city id="city"}}
 // Can grab on js side through city: this.get('city')    
 ```
+_Remember: do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
 
-#### Template - passing data into a component and an action up
-```html
+#### List of helpers
+List of all "helpers" in the [EMBER.TEMPLATES.HELPERS](http://emberjs.com/api/classes/Ember.Templates.helpers.html) class.
+
+#### Passing data down into a component and an action to the js file.
+```hbs
 {{new-component objects=model passedFunction = "activateFunction" }}
 ```
 
-#### Component - activating a function and passing an argument to it
-```html
-{{action 'functionName' argument}}>
+#### Activating an action handler in the js file.
+```hbs
+{{action 'actionName' argument argument }}>
 ```
 By default, the {{action}} helper listens for click events. If we place it on a button, the action we denote will be automatically triggered when that button is clicked.
 
-#### Cook book label
+#### CookBook - A label
 ```html
 <form>
   <div class="form-group">
@@ -77,19 +79,23 @@ By default, the {{action}} helper listens for click events. If we place it on a 
 </form>
 ```
 ## Router
-Adjusting for dynamic routing
+Adjusting for dynamic routing.
 ###### app/router.js
 ```js
 this.route('rental', {path: '/rental/:rental_id'});
 ```
+_The corresponding path is a template page for one object of a set._
 
 ## Model
 Ember guide for [model relationships](https://guides.emberjs.com/v2.0.0/models/defining-models/#toc_one-to-one).  
 
 Basic `property: DS.attr(),`  
-For ONE-TO-ONE `DS.belongsTo('profile')` linked with `DS.belongsTo('user')`  
-For ONE-TO-MANY `DS.belongsTo('post')` linked with `DS.hasMany('comment')`  
-For MANY-TO-MANY  `DS.hasMany('tag')` inked with `DS.hasMany('post')`
+For ONE-TO-ONE
++ `DS.belongsTo('profile')` linked with `DS.belongsTo('user')`  
+For ONE-TO-MANY
++ `DS.belongsTo('post')` linked with `DS.hasMany('comment')`  
+For MANY-TO-MANY  
++ `DS.hasMany('tag')` inked with `DS.hasMany('post')`
 
 #### Example of a model
 ###### app/model/modelName
@@ -102,7 +108,7 @@ export default DS.Model.extend({
 });
 ```
 
-#### Example of two Model with one to many relationships
+#### Example of two models with one to many relationships
 ###### app/models/post.js
 ```js
 import DS from 'ember-data';
@@ -177,7 +183,7 @@ model() {
 _Ember.RSVP.hash is waiting for rental and review to load before passing information. It's waiting for the other promises and then returning the data in one promise._
 
 ### Route Handler - Methods for interacting with a DataStore
-##### Ember methods
+### Ember methods
 ```js
 //Special Ember Commands for working with a datastore
   object.destroyRecord();  // Delete a record.
@@ -188,7 +194,8 @@ _Ember.RSVP.hash is waiting for rental and review to load before passing informa
   this.transitionTo('rental', rental.id);  //Dynamic transition.
 ```
 ### JavaScript methods needed for more complex interaction
-##### Attached to an array
+
+#### Attached to an array.
 
 ###### .find()
 The find() method returns a value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
@@ -210,7 +217,7 @@ var roots = numbers.map(Math.sqrt);
 //numbers is still [1, 4, 9]
 ```  
 
-##### Attached to a map object
+#### Attached to a map object.
 
 ###### .get()
 The get() method returns a specified element from a Map object.
@@ -234,7 +241,7 @@ myMap.set(1, "foobar");
 // Update an element in the map
 myMap.set("bar", "baz");
 ```        
-### Route Handler -  Cook Book Functions
+### Route Handler -  Cook Book Action Handlers
 
 ###### Adding a simple action
 ```js
@@ -265,7 +272,7 @@ update(object, params) {    //Params are grabbed at the component level, usually
   this.transitionTo('dynamicRoute', object.id);
 },
 ```
-###### Writing add function for connecting with child.
+###### Writing add function for connecting with child
 ```js
 addReview(params) {
   var newReview=this.store.createRecord('review',params);
@@ -312,7 +319,7 @@ delete(parentObject) {
 ```
 ## Components - JS side
 
-##### Sending up an function with an argument
+###### Sending up an function with an argument
 ```js
 thingToShow: false,
 actions: {
@@ -322,7 +329,7 @@ actions: {
 }    
 ```
 
-##### Sending up an function with an argument
+###### Sending up an function with an argument
 _Remember: It's important that the variable names we assign these values match the rental model’s attribute names._
 ```js
 funtionToPass(){
@@ -391,9 +398,7 @@ export default Ember.Route.extend({
 + Debugger: `debugger` The debugger statement stops the execution of JavaScript, and calls (if available) the debugging function.  Using the debugger statement has the same function as setting a breakpoint in the code.
 
 #### Handle Bars
-[handlebarsjs.com/](http://handlebarsjs.com/)Handlebars Page
-
-+ Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.
+Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.  [handlebarsjs.com/](http://handlebarsjs.com/)Handlebars Page.
 
 #### Ember
 + **Dynamic segment:** A dynamic segment is simply a placeholder that may be dynamically updated depending on the circumstances (ie: which link we click to travel to this route). In our case, the dynamic segment we add to the rental route will represent the id of a given rental in Firebase. Including this specific information will allow us to return only a single rental in the route's model hook.
