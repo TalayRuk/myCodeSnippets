@@ -72,7 +72,7 @@ Button Styler | Button Styler | [css3buttongenerator.com](http://css3buttongener
 Pizabay | Free High Qaulity Images (and videos) - Over 770,000 free stock photos | [pixabay.com/](https://pixabay.com/)
 
 ## jQuery/JS APIs & libraries
-Resource | Recommend |Description | Link
+Resource | Description | Link
 :---:|---|---:
 Report.js |  Report.js depend on Chart.js for graph rendering. You need to add an ES6 polyfill (core-js or babel-pollyfill) to use this library. | [bi-joe.github.io](http://bi-joe.github.io/report.js/line.html)
 Popup Overlay | jQuery plugin for responsive and accessible modal windows and tooltips|[dev.vast.com](http://dev.vast.com/jquery-popup-overlay/)
