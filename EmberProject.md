@@ -1,5 +1,6 @@
 # Creating An Angular 2 Project
 Last updated _10/27/16_ by _Jonathan_  
+
 This is a summation of information for the [Epicodus Ember](https://www.learnhowtoprogram.com/javascript/ember-js) two week block, with additions from various documentation, for creating an ember project.
 
 ## Create an Ember Project
@@ -29,7 +30,11 @@ Visit your app at http://localhost:4200.
 
 #### Common hbs syntax
 `{{#link-to 'index'}} Home {{/link-to}}`   
-`{{#if}}`, `{{else}}` ,`{{/if}}`  
+`{{#if}}`, `{{else}}` ,`{{/if}}`
+`{{#each model as |object|}}`, `{{object.property}}'s`, `{{/each}}`   
+
+_**Remember:** Do no include spaces between your opening or closing Handlebars brackets.  It may lead to unexpected errors._
+
 #### Common cli commands
 `ember help generate` lists commands.  
 `ember g route [routeName]` make a new route (js file, hbs file, and add route to router).  
