@@ -86,7 +86,7 @@ export default DS.Model.extend({
 
 ## Routes
 
-### Route handler
+### Route handler - models
 
 ###### Returning objects contained within the route handler
 ```js
@@ -135,6 +135,45 @@ model() {
   });
 ```
 _Ember.RSVP.hash is waiting for rental and review to load before passing information. It's waiting for the other promises and then returning the data in one promise._
+
+### Route handler - actions
+##### Methods for working with external files
+```js
+ object.destroyRecord();  // Delete a record.
+ object.save();   //Save a record.  We also use this to update a record by saving over parts.
+ this.transitionTo('rental');  //Used in every method in a route handler.
+ this.transitionTo('rental', rental.id);  //Dynamic transition.
+```
+
+###### Adding a simple action
+```js
+
+```
+###### Adding a save action
+```js
+save(params) {
+  var newRental=this.store.createRecord('rental',params);
+  newRental.save();
+  this.transitionTo('index');
+}
+```
+###### Adding a simple action
+```js
+
+```
+
+###### How to write an update function
+```js
+update(object, params) {    //Params are grabbed at the component level, usually from inside the argument
+  Object.keys(params).forEach(function(key){
+    if(params[key]!==undefined) {
+      object.set(key,params[key]);
+    }
+  });
+  object.save();
+  this.transitionTo('dynamicRoute', object.id);
+},
+```
 
 ## Using Firebase with Ember data
 [Set up an account.](https://firebase.google.com/)  Run `ember install emberfire`.  This will create app/adapters/application.js.  Remember **table names in Firebase will be a plural model name, and the model hooks in your routes will refer to the singular model name.**  
