@@ -88,6 +88,10 @@ API Directory | Has API database and news | [programmableweb.com](http://www.pro
 Google Maps | Customize maps with your own content and imagery. | [developers.google.com](https://developers.google.com/maps/documentation/javascript/)
 API Directory | Has API database and news | [programmableweb.com](http://www.programmableweb.com/)
 
+## Tools
+Tool | Description | Link
+Json View | Chrome extension to help view json files | [chrome.google.com/](https://chrome.google.com/webstore/search/jsonview?hl=en-US)
+
 ## Training Sites
 Training|Description | Link
 :---:|---|---:
@@ -120,11 +124,6 @@ Monit | Process Monitoring | Kris Dahl| Monit is a small Open Source utility for
 Workflows |For |Recommend | Description | Link
 :---:|:---:|:---:|---|---:
 Atomic | Team Communication | Kris Dahl |
-
-## Public APIs
-API | Hoster |Description | Link
-:---:|:---:|---|---:
-
 
 ## Programming Articles
 Topic | Title / Description | Link
